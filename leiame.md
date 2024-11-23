@@ -1,0 +1,2 @@
+pyuic5 -x screen/ui_designer/screen01_machine_input_datas.ui -o screen/ui_generated/screen01_machine_input_datas.py
+pyuic5 -x screen/ui_designer/screen02_tela_teste.ui -o screen/ui_generated/screen02_tela_teste.py
