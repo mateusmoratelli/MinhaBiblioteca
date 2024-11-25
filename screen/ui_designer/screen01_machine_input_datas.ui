@@ -901,7 +901,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../img/figura1.png</pixmap>
+     <pixmap>../../resources/img/capa_programa_principal.png</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -941,7 +941,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>28</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFILE">
