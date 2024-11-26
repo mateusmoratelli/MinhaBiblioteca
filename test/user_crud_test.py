@@ -1,35 +1,27 @@
-from database import db_setup
 from database.db_setup import SessionLocal
 from crud.user import create_user, get_user, update_user, delete_user, get_users
 from crud.livros_categorias import create_livros_categorias, get_livros_categorias, update_livros_categorias, delete_livros_categorias, get_all_livros_categorias
 from crud.categorias import create_categoria, get_categoria, update_categoria, delete_categoria, get_all_categorias
 from crud.livros import create_livro, get_livro, update_livro, delete_livro, get_all_livros
-from datetime import datetime
-
-def test_grava_usuario():
-   db = SessionLocal()
-   x = create_user(db, nome="John DoeC", email="ajoxhn.doe@example.scom", senha="spassword")
-   print(f"xxxxxxxxxxxxxxxxxxxx {x}")
-   assert x == x
-
+from crud.resumo import create_resumo, get_resumo, update_resumo, delete_resumo, get_all_resumos
 
 def run_crud_operations():
    db = SessionLocal()
    try:
        # Operações CRUD para User
-       user = create_user(db, nome="John DoeC", email="ajoxhn.doe@example.com", senha="spassword")
+       user = create_user(db, nome="John Doe", email="john.doe@example.com")
        print(f"Created User: {user}")
 
        user = get_user(db, user_id=user.id)
        print(f"Retrieved User: {user}")
 
-       updated_user = update_user(db, user_id=user.id, nome="Johccnny Doe")
+       updated_user = update_user(db, user_id=user.id, nome="Johnny Doe")
        print(f"Updated User: {updated_user}")
 
        all_users = get_users(db)
        print(f"All Users: {all_users}")
 
-    #    delete_user(db, user_id=user.id)
+       delete_user(db, user_id=user.id)
        print(f"Deleted User: {user.id}")
 
        # Operações CRUD para LivrosCategorias
@@ -45,7 +37,7 @@ def run_crud_operations():
        all_livros_categorias = get_all_livros_categorias(db)
        print(f"All LivrosCategorias: {all_livros_categorias}")
 
-    #    delete_livros_categorias(db, livros_categorias_id=livros_categorias.id)
+       delete_livros_categorias(db, livros_categorias_id=livros_categorias.id)
        print(f"Deleted LivrosCategorias: {livros_categorias.id}")
 
        # Operações CRUD para Categorias
@@ -61,7 +53,7 @@ def run_crud_operations():
        all_categorias = get_all_categorias(db)
        print(f"All Categorias: {all_categorias}")
 
-    #    delete_categoria(db, categoria_id=categoria.id)
+       delete_categoria(db, categoria_id=categoria.id)
        print(f"Deleted Categoria: {categoria.id}")
 
        # Operações CRUD para Livros
@@ -69,14 +61,14 @@ def run_crud_operations():
            db,
            titulo="O Senhor dos Anéis",
            autor="J.R.R. Tolkien",
+           editora="Allen & Unwin",
+           genero="Fantasia",
+           isbn="978-0544003415",
            paginas=1216,
            ano_publicacao=1954,
-           genero="Fantasia",
            capa="URL da capa",
            pdf="URL do PDF",
            classficacao=5,
-           editora="Allen & Unwin",
-           isbn="978-0544003415",
            sinopse="Uma saga épica..."
        )
        print(f"Created Livro: {livro}")
@@ -90,12 +82,27 @@ def run_crud_operations():
        all_livros = get_all_livros(db)
        print(f"All Livros: {all_livros}")
 
-    #    delete_livro(db, livro_id=livro.id)
+       delete_livro(db, livro_id=livro.id)
        print(f"Deleted Livro: {livro.id}")
+
+       # Operações CRUD para Resumos
+       resumo = create_resumo(db, idusuario=user.id, idlivro=livro.id, resumo="Resumo do livro", paginasLidas=100)
+       print(f"Created Resumo: {resumo}")
+
+       resumo = get_resumo(db, resumo_id=resumo.id)
+       print(f"Retrieved Resumo: {resumo}")
+
+       updated_resumo = update_resumo(db, resumo_id=resumo.id, resumo="Resumo do livro atualizado", paginasLidas=150)
+       print(f"Updated Resumo: {updated_resumo}")
+
+       all_resumos = get_all_resumos(db)
+       print(f"All Resumos: {all_resumos}")
+
+       delete_resumo(db, resumo_id=resumo.id)
+       print(f"Deleted Resumo: {resumo.id}")
 
    finally:
        db.close()
 
 if __name__ == "__main__":
-   db_setup.init_db()  # Ensure the database is initialized
    run_crud_operations()  # Run CRUD operations

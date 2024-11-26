@@ -3,7 +3,7 @@ from database.db_setup import Base
 from utils.time_utils import current_time
 
 class Resumo(Base):
-    __tablename__ = 'usuarios'
+    __tablename__ = 'resumo'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     idusuario = Column(Integer, nullable=False)
@@ -16,4 +16,5 @@ class Resumo(Base):
     # addresses = relationship("Address", back_populates="user")
 
     def __repr__(self):
-        return f"<Resumo(id='{self.id}', idusuario='{self.idusuario}', resumo='{self.resumo}'>"
+        return (f"Resumo(id={self.id}, idusuario={self.idusuario}, idlivro={self.idlivro}, "
+                f"resumo='{self.resumo}', paginasLidas={self.paginasLidas}, criado_em={self.criado_em})")

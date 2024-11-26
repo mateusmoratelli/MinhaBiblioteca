@@ -12,3 +12,16 @@ screen/ui_controllers/__pycache__/definicoes_tela1.cpython-311.pyc
 screen/ui_controllers/__pycache__/definicoes_tela2.cpython-311.pyc
 screen/ui_controllers/__pycache__/definicoes_tela1.cpython-311.pyc
 screen/ui_controllers/__pycache__/definicoes_tela2.cpython-311.pyc
+.vscode/launch.json
+models/__pycache__/__init__.cpython-311.pyc
+models/__pycache__/categorias.cpython-311.pyc
+models/__pycache__/livros_categorias.cpython-311.pyc
+models/__pycache__/livros.cpython-311.pyc
+models/__pycache__/user.cpython-311.pyc
+*.db
+*__pycache__*
+*.pyc
+models/__pycache__/*.pyc
+
+test/__pycache__/__init__.cpython-311.pyc
+test/__pycache__/user_crud_test.cpython-311.pyc

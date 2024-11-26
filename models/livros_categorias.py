@@ -12,4 +12,5 @@ class LivrosCategorias(Base):
 
 
     def __repr__(self):
-        return f"<LivrosCategorias(livro_id='{self.livro_id}', email='{self.categoria_id}')>"
+        return (f"LivrosCategorias(id={self.id}, livro_id={self.livro_id}, "
+                f"categoria_id={self.categoria_id}, criado_em={self.criado_em})")

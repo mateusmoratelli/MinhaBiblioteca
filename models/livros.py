@@ -21,4 +21,8 @@ class Livros(Base):
 
 
     def __repr__(self):
-        return f"<Livros(titulo='{self.titulo}', autor='{self.autor}', paginas='{self.paginas}', ano_publicacao='{self.ano_publicacao}' )>"
+        return (f"Livros(id={self.id}, titulo='{self.titulo}', autor='{self.autor}', "
+                f"editora='{self.editora}', genero='{self.genero}', isbn='{self.isbn}', "
+                f"paginas={self.paginas}, ano_publicacao={self.ano_publicacao}, capa='{self.capa}', "
+                f"pdf='{self.pdf}', classficacao={self.classficacao}, sinopse='{self.sinopse}', "
+                f"criado_em={self.criado_em})")

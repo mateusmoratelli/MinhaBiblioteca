@@ -11,4 +11,5 @@ class Categorias(Base):
 
 
     def __repr__(self):
-        return f"<Categorias(categoria='{self.categoria}'')>"
+        return (f"Categorias(id={self.id}, categoria='{self.categoria}', "
+                f"criado_em={self.criado_em})")

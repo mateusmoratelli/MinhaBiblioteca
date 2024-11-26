@@ -500,6 +500,7 @@
     <addaction name="menuCadatrarCategoria"/>
     <addaction name="separator"/>
     <addaction name="menuCadastrarUsuario"/>
+    <addaction name="menuEfetuarTestes"/>
    </widget>
    <addaction name="menuCadastrar"/>
   </widget>
@@ -522,6 +523,11 @@
   <action name="actionResumo">
    <property name="text">
     <string>Resumo</string>
+   </property>
+  </action>
+  <action name="menuEfetuarTestes">
+   <property name="text">
+    <string> Efetuar Testes DB</string>
    </property>
   </action>
  </widget>
