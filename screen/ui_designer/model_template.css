@@ -1,7 +1,7 @@
 /*VALIDO*/
 /*Styles for the info_frame element*/
 
-/*GERAL*/
+/*GERAL  mm*/
 
 
 
@@ -18,10 +18,8 @@ QDialog{
     background-color:#5a5e61;	    
 }
 
-
-
 #widgetFundo{
-    background-color:#0075BE;
+    background-color:#0075BE; 
 }
 
 #frame_2{
