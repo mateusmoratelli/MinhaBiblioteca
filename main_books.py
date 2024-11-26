@@ -1,4 +1,5 @@
-import test.user_crud_test as _myCrud
+# import test.user_crud_test as _myCrud
+import screen.ui_controllers.controlar_tela_main as telaMain
 
 VERSION = "1.0.0"
 APP = "TESTE DE TELAS "
@@ -17,5 +18,5 @@ if __name__ == "__main__":
     ###############################################################
         
     """)
-    _myCrud.run_crud_operations()
+    telaMain.TelaMain()
 
