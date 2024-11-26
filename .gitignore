@@ -25,3 +25,7 @@ models/__pycache__/*.pyc
 
 test/__pycache__/__init__.cpython-311.pyc
 test/__pycache__/user_crud_test.cpython-311.pyc
+models/__pycache__/categorias.cpython-311.pyc
+models/__pycache__/livros_categorias.cpython-311.pyc
+models/__pycache__/livros.cpython-311.pyc
+models/__pycache__/user.cpython-311.pyc
