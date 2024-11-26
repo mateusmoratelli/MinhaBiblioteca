@@ -3,6 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 import screen.ui_generated.screen_main as uiMain
+from contantes import *
 
 
 class TelaMain():
@@ -20,6 +21,7 @@ class TelaMain():
         self.ui = uiMain.Ui_MainWindow()                    # nomeia como self.ui a tela Main
         self.ui.setupUi(self.telaMain)                      # configura a tela inicial
         self.telaMain.show()
+        self.ui.statusbar.showMessage(f"Bem vindo ao Programa: {APP}, Versão: {VERSION}-{RELEASED} feito por {BY}", 5000)
 
 
     def defineFuncoesMenu(self):
@@ -37,10 +39,12 @@ class TelaMain():
 
     def novoLivro(self):
         print("menu novo livro")
+        self.ui.statusbar.showMessage(f"Cadastrar novo livro", 3000)
     
 
     def novaCategoria(self):
         print("menu nova categoria")
+        self.ui.statusbar.showMessage(f"Cadastrar nova categoria", 3000)
 
     
     def cadastroUsuarios(self):

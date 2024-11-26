@@ -1,9 +1,6 @@
 import screen.ui_controllers.definicoes_tela1 as _telaMain
-
-VERSION = "1.0.0"
-APP = "TESTE DE TELAS "
-REV = "2024.11.13"
-BY = "MATEUS MORATELLI"
+from contantes import *
+ 
 
 
 if __name__ == "__main__":
@@ -12,8 +9,9 @@ if __name__ == "__main__":
     ###############################################################      
         BEM VINDO AO PROGRAMA
         {APP}  
-        VERSÃO: {VERSION} - Relesed: {REV}
+        VERSÃO: {VERSION} - Relesed: {RELEASED}
         by: {BY}
+        {WEBSITE}
     ###############################################################
         
     """)
