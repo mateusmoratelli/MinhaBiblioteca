@@ -67,6 +67,16 @@
    <property name="text">
     <string>Salvar Usuário</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/save_16dp_48752C.png</normaloff>../../resources/icons/save_16dp_48752C.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
   <widget class="QLineEdit" name="txtUsuario">
    <property name="geometry">
@@ -135,6 +145,16 @@
    <property name="text">
     <string>Excluir</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
   <widget class="QPushButton" name="btEditarUsuario">
    <property name="geometry">
@@ -147,6 +167,16 @@
    </property>
    <property name="text">
     <string>Editar</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/border_color_16dp_5F6368.png</normaloff>../../resources/icons/border_color_16dp_5F6368.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
  </widget>

@@ -17,6 +17,7 @@ class Ui_Dialog(object):
         Dialog.resize(476, 226)
         self.lbSoftware = QtWidgets.QLabel(Dialog)
         self.lbSoftware.setGeometry(QtCore.QRect(10, 10, 461, 41))
+        self.lbSoftware.setMaximumSize(QtCore.QSize(461, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)

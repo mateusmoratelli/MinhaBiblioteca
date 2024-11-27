@@ -393,6 +393,16 @@
     <property name="text">
      <string>Ler Resumo</string>
     </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/local_library_16dp_5F6368.png</normaloff>../../resources/icons/local_library_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="btAbrirPDF">
     <property name="geometry">
@@ -410,6 +420,16 @@
     </property>
     <property name="text">
      <string>Abrir PDF</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/picture_as_pdf_16dp_5F6368.png</normaloff>../../resources/icons/picture_as_pdf_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
     </property>
    </widget>
    <widget class="QPushButton" name="btEditarLivro">
@@ -429,6 +449,16 @@
     <property name="text">
      <string>Editar Livro</string>
     </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/border_color_16dp_5F6368.png</normaloff>../../resources/icons/border_color_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="btNovoLivro">
     <property name="geometry">
@@ -446,6 +476,16 @@
     </property>
     <property name="text">
      <string>Novo Livro</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/library_books_16dp_5F6368.png</normaloff>../../resources/icons/library_books_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
     </property>
    </widget>
    <widget class="QLabel" name="lbCapa">

@@ -62,6 +62,16 @@
    <property name="text">
     <string>Salvar Livro</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/save_16dp_48752C.png</normaloff>../../resources/icons/save_16dp_48752C.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
@@ -340,6 +350,16 @@
    <property name="text">
     <string>Alterar capa</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/style_24dp_5F6368.png</normaloff>../../resources/icons/style_24dp_5F6368.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
   <widget class="QLabel" name="label_11">
    <property name="geometry">
@@ -378,6 +398,16 @@
    <property name="text">
     <string>Excluir livro</string>
    </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
   </widget>
   <widget class="QPushButton" name="btEnviarPDF">
    <property name="geometry">
@@ -395,6 +425,16 @@
    </property>
    <property name="text">
     <string>Enviar PDF</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/file_upload_24dp_5F6368.png</normaloff>../../resources/icons/file_upload_24dp_5F6368.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
  </widget>
