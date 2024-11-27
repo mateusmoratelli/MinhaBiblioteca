@@ -29,3 +29,13 @@ models/__pycache__/categorias.cpython-311.pyc
 models/__pycache__/livros_categorias.cpython-311.pyc
 models/__pycache__/livros.cpython-311.pyc
 models/__pycache__/user.cpython-311.pyc
+crud/__pycache__/categorias.cpython-311.pyc
+crud/__pycache__/categorias.cpython-313.pyc
+crud/__pycache__/livros_categorias.cpython-311.pyc
+crud/__pycache__/livros_categorias.cpython-313.pyc
+crud/__pycache__/livros.cpython-311.pyc
+crud/__pycache__/livros.cpython-313.pyc
+crud/__pycache__/order.cpython-311.pyc
+crud/__pycache__/product.cpython-311.pyc
+crud/__pycache__/user.cpython-311.pyc
+crud/__pycache__/user.cpython-313.pyc

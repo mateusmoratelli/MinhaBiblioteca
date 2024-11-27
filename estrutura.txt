@@ -1,0 +1,135 @@
+Listagem de caminhos de pasta para o volume DADOS
+O número de série do volume é 00A7-AF3A
+E:.
+|   .gitignore
+|   contantes.py
+|   estrutura.txt
+|   main.py
+|   main_books.py
+|   minha_biblioteca.db
+|   readme.md
+|   requirements.txt
+|   __init__.py
+|   
++---.vscode
+|       launch.json
+|       
++---core
+|   |   calculo1.py
+|   |   
+|   \---__pycache__
+|           calculo1.cpython-311.pyc
+|           
++---crud
+|   \---__pycache__
++---database
+|   |   db_setup.py
+|   |   __init__.py
+|   |   
+|   \---crud
+|           genero.py
+|           livros.py
+|           livro_genero.py
+|           resumo.py
+|           user.py
+|           __init__.py
+|           
++---models
+|       genero.py
+|       livros.py
+|       livro_genero.py
+|       resumo.py
+|       user.py
+|       __init__.py
+|       
++---resources
+|   +---icons
+|   |       border_color_16dp_5F6368.png
+|   |       delete_forever_16dp_5F6368.png
+|   |       delete_forever_16dp_BB271A.png
+|   |       file_upload_24dp_5F6368.png
+|   |       library_books_16dp_5F6368.png
+|   |       local_library_16dp_5F6368.png
+|   |       local_library_24dp_5F6368.png
+|   |       picture_as_pdf_16dp_5F6368.png
+|   |       save_16dp_48752C.png
+|   |       style_24dp_5F6368.png
+|   |       
+|   \---img
+|           capa_programa_principal.png
+|           figura1.png
+|           figura2.png
+|           figura_inicial.png
+|           
++---screen
+|   +---ui_controllers
+|   |   |   controlar_tela_cadastro_genero.py
+|   |   |   controlar_tela_cadastro_livros.py
+|   |   |   controlar_tela_cadastro_usuarios.py
+|   |   |   controlar_tela_main.py
+|   |   |   controlar_tela_resumo_livros.py
+|   |   |   controlar_tela_sobre_sistema.py
+|   |   |   definicoes_tela1.py
+|   |   |   definicoes_tela2.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           controlar_tela_cadastro_genero.cpython-311.pyc
+|   |           controlar_tela_cadastro_livros.cpython-311.pyc
+|   |           controlar_tela_cadastro_usuarios.cpython-311.pyc
+|   |           controlar_tela_main.cpython-311.pyc
+|   |           controlar_tela_sobre_sistema.cpython-311.pyc
+|   |           __init__.cpython-311.pyc
+|   |           
+|   +---ui_designer
+|   |       model_template.css
+|   |       Screen01-MachineInputDatas.ui
+|   |       screen01_machine_input_datas.ui
+|   |       screen02_tela_teste.ui
+|   |       screen_cadastro_genero.ui
+|   |       screen_cadastro_livros.ui
+|   |       screen_cadastro_usuarios.ui
+|   |       screen_main.ui
+|   |       screen_resumo_livro.ui
+|   |       sreen_sobre_programa.ui
+|   |       
+|   \---ui_generated
+|       |   screen01_machine_input_datas.py
+|       |   screen02_tela_teste.py
+|       |   screen_cadastro_genero.py
+|       |   screen_cadastro_livros.py
+|       |   screen_cadastro_usuarios.py
+|       |   screen_main.py
+|       |   screen_resumo_livro.py
+|       |   sreen_sobre_programa.py
+|       |   __init__.py
+|       |   
+|       \---__pycache__
+|               screen_cadastro_genero.cpython-311.pyc
+|               screen_cadastro_livros.cpython-311.pyc
+|               screen_cadastro_usuarios.cpython-311.pyc
+|               screen_main.cpython-311.pyc
+|               sreen_sobre_programa.cpython-311.pyc
+|               __init__.cpython-311.pyc
+|               
++---test
+|   |   calculate_age.py
+|   |   test_mmain.py
+|   |   user_crud_test.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           user_crud_test.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
++---utils
+|   |   time_utils.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           time_utils.cpython-311.pyc
+|           __init__.cpython-311.pyc
+|           
+\---__pycache__
+        contantes.cpython-311.pyc
+        

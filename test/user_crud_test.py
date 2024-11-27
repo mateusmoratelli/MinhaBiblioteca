@@ -1,9 +1,10 @@
 from database.db_setup import SessionLocal
-from crud.user import create_user, get_user, update_user, delete_user, get_users
-from crud.livro_genero import create_livro_genero, get_livro_genero, update_livro_genero, delete_livro_genero, get_all_livro_genero
-from crud.genero import create_genero, get_genero, update_genero, delete_genero, get_all_genero
-from crud.livros import create_livro, get_livro, update_livro, delete_livro, get_all_livros
-from crud.resumo import create_resumo, get_resumo, update_resumo, delete_resumo, get_all_resumos
+from database.crud.user import create_user, get_user, update_user, delete_user, get_users
+from database.crud.livro_genero import *
+from database.crud.genero import *
+from database.crud.livros import *
+from database.crud.resumo import *
+
 
 def run_crud_operations():
    db = SessionLocal()
@@ -44,14 +45,21 @@ def run_crud_operations():
        genero = create_genero(db, genero="Ficção")
        print(f"Created Categoria: {genero}")
 
-       genero = get_genero(db, genero_id=genero.id)
+       genero = get_genero_by_id(db, genero_id=genero.id)
        print(f"Retrieved Categoria: {genero}")
+
+       genex =  get_genero_by_name(db, genero="xxxx")
+       print(genex)
+
+       pedaco = search_genero_by_name(db, "Fic")
+       print(f"Pedaço: {pedaco}")
 
        updated_genero = update_genero(db, genero_id=genero.id, genero="Fantasia")
        print(f"Updated Categoria: {updated_genero}")
 
        all_genero = get_all_genero(db)
        print(f"All genero: {all_genero}")
+
 
        delete_genero(db, genero_id=genero.id)
        print(f"Deleted Categoria: {genero.id}")
