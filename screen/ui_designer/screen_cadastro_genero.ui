@@ -20,7 +20,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Cadastro de Gêneros de Livros</string>
   </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -39,7 +39,7 @@
     </font>
    </property>
    <property name="text">
-    <string>CADASTRO DE GENÊROS</string>
+    <string>CADASTRO DE GÊNERO DE LIVROS</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -49,31 +49,31 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>130</y>
+     <y>90</y>
      <width>251</width>
-     <height>241</height>
+     <height>321</height>
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="btAdicionarGenero">
+  <widget class="QPushButton" name="btSalvarGenero">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>180</y>
+     <x>360</x>
+     <y>130</y>
      <width>121</width>
      <height>51</height>
     </rect>
    </property>
    <property name="text">
-    <string>Adicionar usuário</string>
+    <string>Salvar Gênero</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="txtGenero">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>140</y>
-     <width>191</width>
+     <x>360</x>
+     <y>90</y>
+     <width>261</width>
      <height>31</height>
     </rect>
    </property>
@@ -86,8 +86,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>120</y>
+     <x>360</x>
+     <y>70</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -95,24 +95,28 @@
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
-    <string>Novo Genêro</string>
+    <string>Novo Gênero</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>110</y>
-     <width>171</width>
+     <y>70</y>
+     <width>241</width>
      <height>16</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="text">
@@ -123,7 +127,7 @@
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>380</y>
+     <y>420</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -136,7 +140,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>380</y>
+     <y>420</y>
      <width>121</width>
      <height>51</height>
     </rect>

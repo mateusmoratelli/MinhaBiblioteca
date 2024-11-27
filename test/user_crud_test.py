@@ -1,7 +1,7 @@
 from database.db_setup import SessionLocal
 from crud.user import create_user, get_user, update_user, delete_user, get_users
-from crud.livros_categorias import create_livros_categorias, get_livros_categorias, update_livros_categorias, delete_livros_categorias, get_all_livros_categorias
-from crud.categorias import create_categoria, get_categoria, update_categoria, delete_categoria, get_all_categorias
+from crud.livro_genero import create_livro_genero, get_livro_genero, update_livro_genero, delete_livro_genero, get_all_livro_genero
+from crud.genero import create_genero, get_genero, update_genero, delete_genero, get_all_genero
 from crud.livros import create_livro, get_livro, update_livro, delete_livro, get_all_livros
 from crud.resumo import create_resumo, get_resumo, update_resumo, delete_resumo, get_all_resumos
 
@@ -24,37 +24,37 @@ def run_crud_operations():
        delete_user(db, user_id=user.id)
        print(f"Deleted User: {user.id}")
 
-       # Operações CRUD para LivrosCategorias
-       livros_categorias = create_livros_categorias(db, livro_id=1, categoria_id=1)
-       print(f"Created LivrosCategorias: {livros_categorias}")
+       # Operações CRUD para Livrosgenero
+       livro_genero = create_livro_genero(db, livro_id=1, genero_id=1)
+       print(f"Created Livrosgenero: {livro_genero}")
 
-       livros_categorias = get_livros_categorias(db, livros_categorias_id=livros_categorias.id)
-       print(f"Retrieved LivrosCategorias: {livros_categorias}")
+       livros_genero = get_livro_genero(db, livro_genero_id=livro_genero.id)
+       print(f"Retrieved Livrosgenero: {livros_genero}")
 
-       updated_livros_categorias = update_livros_categorias(db, livros_categorias_id=livros_categorias.id, livro_id=2)
-       print(f"Updated LivrosCategorias: {updated_livros_categorias}")
+       updated_livros_genero = update_livro_genero(db, livro_genero_id=livro_genero.id, livro_id=2)
+       print(f"Updated Livrosgenero: {updated_livros_genero}")
 
-       all_livros_categorias = get_all_livros_categorias(db)
-       print(f"All LivrosCategorias: {all_livros_categorias}")
+       all_livros_genero = get_all_livro_genero(db)
+       print(f"All Livrosgenero: {all_livros_genero}")
 
-       delete_livros_categorias(db, livros_categorias_id=livros_categorias.id)
-       print(f"Deleted LivrosCategorias: {livros_categorias.id}")
+       delete_livro_genero(db, livro_genero_id=livro_genero.id)
+       print(f"Deleted Livrosgenero: {livros_genero.id}")
 
-       # Operações CRUD para Categorias
-       categoria = create_categoria(db, categoria="Ficção")
-       print(f"Created Categoria: {categoria}")
+       # Operações CRUD para genero
+       genero = create_genero(db, genero="Ficção")
+       print(f"Created Categoria: {genero}")
 
-       categoria = get_categoria(db, categoria_id=categoria.id)
-       print(f"Retrieved Categoria: {categoria}")
+       genero = get_genero(db, genero_id=genero.id)
+       print(f"Retrieved Categoria: {genero}")
 
-       updated_categoria = update_categoria(db, categoria_id=categoria.id, categoria="Fantasia")
-       print(f"Updated Categoria: {updated_categoria}")
+       updated_genero = update_genero(db, genero_id=genero.id, genero="Fantasia")
+       print(f"Updated Categoria: {updated_genero}")
 
-       all_categorias = get_all_categorias(db)
-       print(f"All Categorias: {all_categorias}")
+       all_genero = get_all_genero(db)
+       print(f"All genero: {all_genero}")
 
-       delete_categoria(db, categoria_id=categoria.id)
-       print(f"Deleted Categoria: {categoria.id}")
+       delete_genero(db, genero_id=genero.id)
+       print(f"Deleted Categoria: {genero.id}")
 
        # Operações CRUD para Livros
        livro = create_livro(

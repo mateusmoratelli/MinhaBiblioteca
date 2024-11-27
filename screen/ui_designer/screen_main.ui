@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Minha Biblioteca</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tbLivros">
@@ -497,12 +497,19 @@
      <string>Cadastrar</string>
     </property>
     <addaction name="menuNovoLivro"/>
-    <addaction name="menuCadatrarCategoria"/>
+    <addaction name="menuCadatrarGenero"/>
     <addaction name="separator"/>
     <addaction name="menuCadastrarUsuario"/>
     <addaction name="menuEfetuarTestes"/>
    </widget>
+   <widget class="QMenu" name="menuAjuda">
+    <property name="title">
+     <string>Ajuda</string>
+    </property>
+    <addaction name="menuSobrePrograma"/>
+   </widget>
    <addaction name="menuCadastrar"/>
+   <addaction name="menuAjuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="menuNovoLivro">
@@ -510,9 +517,9 @@
     <string>Novo Livro</string>
    </property>
   </action>
-  <action name="menuCadatrarCategoria">
+  <action name="menuCadatrarGenero">
    <property name="text">
-    <string>Categorias</string>
+    <string>Cadastrar Gênero de livro</string>
    </property>
   </action>
   <action name="menuCadastrarUsuario">
@@ -528,6 +535,11 @@
   <action name="menuEfetuarTestes">
    <property name="text">
     <string> Efetuar Testes DB</string>
+   </property>
+  </action>
+  <action name="menuSobrePrograma">
+   <property name="text">
+    <string>Sobre o programa</string>
    </property>
   </action>
  </widget>
