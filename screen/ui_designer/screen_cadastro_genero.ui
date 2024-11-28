@@ -51,15 +51,50 @@
      <x>30</x>
      <y>90</y>
      <width>251</width>
-     <height>321</height>
+     <height>371</height>
     </rect>
    </property>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>New Item</string>
+    </property>
+   </item>
   </widget>
   <widget class="QPushButton" name="btSalvarGenero">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>130</y>
+     <x>300</x>
+     <y>150</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -81,9 +116,9 @@
   <widget class="QLineEdit" name="txtGenero">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>90</y>
-     <width>261</width>
+     <x>300</x>
+     <y>110</y>
+     <width>321</width>
      <height>31</height>
     </rect>
    </property>
@@ -96,8 +131,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>70</y>
+     <x>300</x>
+     <y>90</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -110,7 +145,7 @@
     </font>
    </property>
    <property name="text">
-    <string>Novo Gênero</string>
+    <string>Gênero</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -136,8 +171,8 @@
   <widget class="QPushButton" name="btExcluirGenero">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>420</y>
+     <x>500</x>
+     <y>150</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -148,29 +183,6 @@
    <property name="icon">
     <iconset>
      <normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</iconset>
-   </property>
-   <property name="iconSize">
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btEditarGenero">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>420</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Editar</string>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../../resources/icons/border_color_16dp_5F6368.png</normaloff>../../resources/icons/border_color_16dp_5F6368.png</iconset>
    </property>
    <property name="iconSize">
     <size>

@@ -28,10 +28,11 @@ def search_genero_by_name(db: Session, search_term: str):
     """
     search_pattern = f"%{search_term}%"
     return db.query(Genero).filter(Genero.genero.ilike(search_pattern)).all()
+    
 
 
 def get_all_genero(db: Session, skip: int = 0, limit: int = 10):
-   return db.query(Genero).offset(skip).limit(limit).all()
+   return db.query(Genero).order_by(Genero.genero).offset(skip).limit(limit).all()
 
 
 def update_genero(db: Session, genero_id: int, genero: str = None):

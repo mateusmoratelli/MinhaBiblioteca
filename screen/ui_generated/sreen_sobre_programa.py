@@ -11,12 +11,14 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(476, 226)
-        self.lbSoftware = QtWidgets.QLabel(Dialog)
-        self.lbSoftware.setGeometry(QtCore.QRect(10, 10, 461, 41))
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(472, 218)
+        Form.setMinimumSize(QtCore.QSize(472, 218))
+        Form.setMaximumSize(QtCore.QSize(472, 218))
+        self.lbSoftware = QtWidgets.QLabel(Form)
+        self.lbSoftware.setGeometry(QtCore.QRect(1, 11, 461, 41))
         self.lbSoftware.setMaximumSize(QtCore.QSize(461, 41))
         font = QtGui.QFont()
         font.setPointSize(20)
@@ -25,8 +27,8 @@ class Ui_Dialog(object):
         self.lbSoftware.setFont(font)
         self.lbSoftware.setAlignment(QtCore.Qt.AlignCenter)
         self.lbSoftware.setObjectName("lbSoftware")
-        self.formLayoutWidget = QtWidgets.QWidget(Dialog)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(19, 79, 451, 121))
+        self.formLayoutWidget = QtWidgets.QWidget(Form)
+        self.formLayoutWidget.setGeometry(QtCore.QRect(10, 80, 451, 121))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtWidgets.QFormLayout(self.formLayoutWidget)
         self.formLayout.setContentsMargins(0, 0, 0, 0)
@@ -96,28 +98,28 @@ class Ui_Dialog(object):
         self.lbSite.setObjectName("lbSite")
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.lbSite)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Sobre o Programa"))
-        self.lbSoftware.setText(_translate("Dialog", "PROGRAMA XXXX"))
-        self.label_2.setText(_translate("Dialog", "Versão:"))
-        self.lbVersao.setText(_translate("Dialog", "XXX"))
-        self.label_3.setText(_translate("Dialog", "Data:"))
-        self.lbDataRevisao.setText(_translate("Dialog", "XXX"))
-        self.label_4.setText(_translate("Dialog", "Desenvolvedor:  "))
-        self.lbDesenvolvedor.setText(_translate("Dialog", "XXX"))
-        self.label_5.setText(_translate("Dialog", "Site:"))
-        self.lbSite.setText(_translate("Dialog", "XXX"))
+        Form.setWindowTitle(_translate("Form", "Sobre o Programa"))
+        self.lbSoftware.setText(_translate("Form", "PROGRAMA XXXX"))
+        self.label_2.setText(_translate("Form", "Versão:"))
+        self.lbVersao.setText(_translate("Form", "XXX"))
+        self.label_3.setText(_translate("Form", "Data:"))
+        self.lbDataRevisao.setText(_translate("Form", "XXX"))
+        self.label_4.setText(_translate("Form", "Desenvolvedor:  "))
+        self.lbDesenvolvedor.setText(_translate("Form", "XXX"))
+        self.label_5.setText(_translate("Form", "Site:"))
+        self.lbSite.setText(_translate("Form", "XXX"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
-    ui.setupUi(Dialog)
-    Dialog.show()
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
     sys.exit(app.exec_())
