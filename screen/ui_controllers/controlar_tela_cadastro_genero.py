@@ -49,11 +49,8 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
             self.textoItem = item.text()
             self.ui.txtGenero.setText(self.textoItem)
             self.ui.itemSelected = True
-                    
-            # QtWidgets.QMessageBox.information(self, "Texto Selecionado", f"Você selecionou: {texto}")
         else:
             self.textoItem = "1111111111111111111111111111111111111111111111111111"
-            # QtWidgets.QMessageBox.warning(self, "Aviso", "Nenhum item selecionado!")
 
 
     def acaoExcluirGenero(self):
