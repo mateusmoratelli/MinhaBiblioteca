@@ -7,7 +7,7 @@ import screen.ui_controllers.controlar_tela_cadastro_genero as ctrlCadastro
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
-from contantes import *
+from globais import *
 
 
 class TelaMain():
@@ -15,8 +15,9 @@ class TelaMain():
         self.iniciarAplicacao()
         self.defineFuncoesMenu()
         self.defineFuncoesBotoes()
-        self.limparCampos()
+        self.acaoLimparCampos()
         sys.exit(self.app.exec_())
+
 
 
     def iniciarAplicacao(self):
@@ -28,57 +29,25 @@ class TelaMain():
         self.ui.statusbar.showMessage(f"Bem vindo ao Programa: {APP}, Versão: {VERSION}-{RELEASED} feito por {BY}", 5000)
 
 
+
     def defineFuncoesMenu(self):
-        self.ui.menuNovoLivro.triggered.connect(self.novoLivro)
-        self.ui.menuCadatrarGenero.triggered.connect(self.novoGeneroLivro)
-        self.ui.menuCadastrarUsuario.triggered.connect(self.cadastroUsuarios)
+        self.ui.menuNovoLivro.triggered.connect(self.acaoNovoLivro)
+        self.ui.menuCadatrarGenero.triggered.connect(self.acaoNovoGeneroLivro)
+        self.ui.menuCadastrarUsuario.triggered.connect(self.acaoCadastroUsuarios)
         self.ui.menuSobrePrograma.triggered.connect(self.acaoAbrirTelaSobreSistema)
 
 
+
     def defineFuncoesBotoes(self):
-        self.ui.btLerResumo.clicked.connect(self.lerResumo)
-        self.ui.btEditarLivro.clicked.connect(self.editarLivro)
-        self.ui.btAbrirPDF.clicked.connect(self.abrirPdf)
-        self.ui.btNovoLivro.clicked.connect(self.novoLivro)
+        self.ui.btBuscarLivros
+        self.ui.btLerResumo.clicked.connect(self.acaoLerResumo)
+        self.ui.btEditarLivro.clicked.connect(self.acaoEditarLivro)
+        self.ui.btAbrirPDF.clicked.connect(self.acaoAbrirPdf)
+        self.ui.btNovoLivro.clicked.connect(self.acaoNovoLivro)
 
 
-    def novoLivro(self):
-        print("menu novo livro")
-        self.ui.statusbar.showMessage(f"Cadastrar novo livro", 3000)
-        self.telaLivro = ctrlLivros.CadastrarLivro()
-        self.telaLivro.show()
-    
 
-    def novoGeneroLivro(self):
-        print("menu novo gênero de livro")
-        self.ui.statusbar.showMessage(f"Cadastrar nova categoria", 3000)
-        self.telaCateg = ctrlCadastro.CadastroCategoria()
-        self.telaCateg.show()
-
-    
-    def cadastroUsuarios(self):
-        self.ui.statusbar.showMessage("Cadastrar Usuários", 3000)
-        self.telaUsuario = ctrlUsuarios.CadastrarUsuario()
-        self.telaUsuario.show()
-
-    def acaoAbrirTelaSobreSistema(self):
-        self.ui.statusbar.showMessage("Sobre o sistema", 3000)
-        self.telaSobreSistema = ctrlSobre.SobreSistema()
-        self.telaSobreSistema.show()
-
-    
-    def lerResumo(self):
-        print("Ler resumo do livro")
-
-
-    def editarLivro(Self):
-        print("Editar Livro")
-
-
-    def abrirPdf(self):
-        print("Abrir pdf ")
-    
-    def limparCampos(self):
+    def acaoLimparCampos(self):
         print("Limpando  campos")
         self.ui.lbTituloLivro.setText("")
         self.ui.lbAutor.setText("")
@@ -93,6 +62,55 @@ class TelaMain():
         self.ui.txtSinopse.setText("")
         pixmap = QtGui.QPixmap("resources/img/capa_programa_principal.png")     # caminho da imagem 
         self.ui.lbCapa.setPixmap(pixmap)                                        # Seta um pixmap
-        self.ui.lbCapa.setScaledContents(True)                                  # Ajusta a imagem para ocupar todo o espaço do QLabel 
+        self.ui.lbCapa.setScaledContents(True)                                  # Ajusta a imagem para ocupar todo o espaço do QLabel        
+
+
+
+    def acaoNovoLivro(self):
+        print("menu novo livro")
+        self.ui.statusbar.showMessage(f"Cadastrar novo livro", 3000)
+        self.telaLivro = ctrlLivros.CadastrarLivro()
+        self.telaLivro.show()
+    
+
+
+    def acaoNovoGeneroLivro(self):
+        print("menu novo gênero de livro")
+        self.ui.statusbar.showMessage(f"Cadastrar nova categoria", 3000)
+        self.telaCateg = ctrlCadastro.CadastroCategoria()
+        self.telaCateg.show()
+
+
+    
+    def acaoCadastroUsuarios(self):
+        self.ui.statusbar.showMessage("Cadastrar Usuários", 3000)
+        self.telaUsuario = ctrlUsuarios.CadastrarUsuario()
+        self.telaUsuario.show()
+
+
+
+    def acaoAbrirTelaSobreSistema(self):
+        self.ui.statusbar.showMessage("Sobre o sistema", 3000)
+        self.telaSobreSistema = ctrlSobre.SobreSistema()
+        self.telaSobreSistema.show()
+
+    
+
+    def acaoLerResumo(self):
+        print("Ler resumo do livro")
+
+
+
+    def acaoEditarLivro(Self):
+        print("Editar Livro")
+
+
+
+    def acaoAbrirPdf(self):
+        print("Abrir pdf ")
+    
+
+
+ 
     
 

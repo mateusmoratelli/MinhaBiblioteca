@@ -1,5 +1,5 @@
 import screen.ui_controllers.definicoes_tela1 as _telaMain
-from contantes import *
+from globais import *
  
 
 

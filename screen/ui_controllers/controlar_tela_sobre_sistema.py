@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 import screen.ui_generated.sreen_sobre_programa as uiSobre
-from contantes import *
+from globais import *
 
 
 
