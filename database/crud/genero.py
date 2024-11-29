@@ -24,7 +24,7 @@ def search_genero_by_name(db: Session, search_term: str):
     
     :param db: Sessão do banco de dados.
     :param search_term: Termo a ser pesquisado.
-    :return: Lista de objetos `Genero` correspondentes.
+    :return: Lista de objetos `Genero` correspondentes. 
     """
     search_pattern = f"%{search_term}%"
     return db.query(Genero).filter(Genero.genero.ilike(search_pattern)).all()
