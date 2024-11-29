@@ -14,7 +14,7 @@ class SobreSistema(uiSobre.QtWidgets.QWidget):
         self.preencheInformacoes()
 
     def iniciarTela(self):
-        self.ui = uiSobre.Ui_Dialog()
+        self.ui = uiSobre.Ui_Form()
         self.ui.setupUi(self)
 
     def preencheInformacoes(self):

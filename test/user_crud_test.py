@@ -1,7 +1,7 @@
 from database.db_setup import SessionLocal
-from database.crud.user import create_user, get_user, update_user, delete_user, get_users
+from database.crud.user import *
 from database.crud.livro_genero import *
-from database.crud.genero import *
+# from database.crud.genero import *
 from database.crud.livros import *
 from database.crud.resumo import *
 
@@ -10,10 +10,10 @@ def run_crud_operations():
    db = SessionLocal()
    try:
        # Operações CRUD para User
-       user = create_user(db, nome="John Doe", email="john.doe@example.com")
+       user = create_user(db, nome="John Doe")
        print(f"Created User: {user}")
 
-       user = get_user(db, user_id=user.id)
+       user = get_user_by_id(db, user_id=user.id)
        print(f"Retrieved User: {user}")
 
        updated_user = update_user(db, user_id=user.id, nome="Johnny Doe")
@@ -41,28 +41,28 @@ def run_crud_operations():
        delete_livro_genero(db, livro_genero_id=livro_genero.id)
        print(f"Deleted Livrosgenero: {livros_genero.id}")
 
-       # Operações CRUD para genero
-       genero = create_genero(db, genero="Ficção")
-       print(f"Created Categoria: {genero}")
+    #    # Operações CRUD para genero
+    #    genero = create_genero(db, genero="Ficção")
+    #    print(f"Created Categoria: {genero}")
 
-       genero = get_genero_by_id(db, genero_id=genero.id)
-       print(f"Retrieved Categoria: {genero}")
+    #    genero = get_genero_by_id(db, genero_id=genero.id)
+    #    print(f"Retrieved Categoria: {genero}")
 
-       genex =  get_genero_by_name(db, genero="xxxx")
-       print(genex)
+    #    genex =  get_genero_by_name(db, genero="xxxx")
+    #    print(genex)
 
-       pedaco = search_genero_by_name(db, "Fic")
-       print(f"Pedaço: {pedaco}")
+    #    pedaco = search_genero_by_name(db, "Fic")
+    #    print(f"Pedaço: {pedaco}")
 
-       updated_genero = update_genero(db, genero_id=genero.id, genero="Fantasia")
-       print(f"Updated Categoria: {updated_genero}")
+    #    updated_genero = update_genero(db, genero_id=genero.id, genero="Fantasia")
+    #    print(f"Updated Categoria: {updated_genero}")
 
-       all_genero = get_all_genero(db)
-       print(f"All genero: {all_genero}")
+    #    all_genero = get_all_genero(db)
+    #    print(f"All genero: {all_genero}")
 
 
-       delete_genero(db, genero_id=genero.id)
-       print(f"Deleted Categoria: {genero.id}")
+    #    delete_genero(db, genero_id=genero.id)
+    #    print(f"Deleted Categoria: {genero.id}")
 
        # Operações CRUD para Livros
        livro = create_livro(

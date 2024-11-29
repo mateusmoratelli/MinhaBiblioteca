@@ -14,7 +14,7 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
         self.dbsql = dbSetup.SessionLocal()  
         self.editar = False
         self.iniciarTela()
-        self.defineBotoes()
+        self.defineAcoesBotoes()
         self.carregarListaGenero()
     
 
@@ -23,14 +23,14 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
         self.ui.setupUi(self)
     
 
-    def defineBotoes(self):
+    def defineAcoesBotoes(self):
         self.ui.btExcluirGenero.clicked.connect(self.acaoExcluirGenero)
         self.ui.btSalvarGenero.clicked.connect(self.acaoSalvarGenero)
         self.ui.lstGeneros.clicked.connect(self.acaoPegarItemSelcionado)
 
 
     def carregarListaGenero(self):
-        self.textoItem = "1111111111111111111111111111111111111111111111111111" # para não encontrar nada na pesquisa
+        self.textoItem = "" # para não encontrar nada na pesquisa
         self.ui.txtGenero.setText("")
         self.ui.lstGeneros.clear()
         self.ui.itemSelected = False
@@ -38,7 +38,6 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
         lst = _crudGenero.get_all_genero(self.dbsql, 0, 999999)
         print(lst)
         for i in lst:
-            print(i)
             self.ui.lstGeneros.addItem(i.genero)
 
 
@@ -50,7 +49,7 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
             self.ui.txtGenero.setText(self.textoItem)
             self.ui.itemSelected = True
         else:
-            self.textoItem = "1111111111111111111111111111111111111111111111111111"
+            self.textoItem = ""
 
 
     def acaoExcluirGenero(self):
@@ -74,11 +73,10 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
 
     def acaoSalvarGenero(self):
         nomeNovoGenero = str(self.ui.txtGenero.text())
-        dbGenero = _crudGenero.search_genero_by_name(self.dbsql, self.textoItem)
-        jaCadastrado = dbGenero.__len__()
-
+        dbGenero = _crudGenero.get_genero_by_name(self.dbsql, self.textoItem)
+ 
         if nomeNovoGenero != "": 
-            if jaCadastrado == 0:
+            if dbGenero.__len__() == 0:
                 listaSalva = _crudGenero.create_genero(self.dbsql, nomeNovoGenero)
             else:
                 listaSalva = _crudGenero.update_genero(self.dbsql, dbGenero[0].id,  nomeNovoGenero )

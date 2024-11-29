@@ -19,6 +19,6 @@ if __name__ == "__main__":
     ###############################################################
         
     """)
-    # testarCrud.run_crud_operations()
+    testarCrud.run_crud_operations()
     telaMain.TelaMain()
 

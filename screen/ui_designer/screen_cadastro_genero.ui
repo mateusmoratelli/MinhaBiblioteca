@@ -93,8 +93,8 @@
   <widget class="QPushButton" name="btSalvarGenero">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>150</y>
+     <x>290</x>
+     <y>130</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -116,9 +116,9 @@
   <widget class="QLineEdit" name="txtGenero">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>110</y>
-     <width>321</width>
+     <x>290</x>
+     <y>90</y>
+     <width>341</width>
      <height>31</height>
     </rect>
    </property>
@@ -132,7 +132,7 @@
    <property name="geometry">
     <rect>
      <x>300</x>
-     <y>90</y>
+     <y>70</y>
      <width>121</width>
      <height>16</height>
     </rect>
@@ -171,8 +171,8 @@
   <widget class="QPushButton" name="btExcluirGenero">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>150</y>
+     <x>510</x>
+     <y>130</y>
      <width>121</width>
      <height>51</height>
     </rect>

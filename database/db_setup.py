@@ -16,6 +16,7 @@ def init_db():
    package_dir = os.path.join(os.path.dirname(__file__), '../models')
    for (module_loader, name, ispkg) in pkgutil.iter_modules([package_dir]):
        importlib.import_module(f"models.{name}")
+       print(f"models.{name}")
    Base.metadata.create_all(bind=engine)
 
 def get_db():
