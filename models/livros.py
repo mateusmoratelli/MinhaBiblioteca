@@ -11,11 +11,11 @@ class Livros(Base):
     editora = Column(String)
     genero = Column(String)
     isbn = Column(String)
-    paginas = Column(Integer)
-    ano_publicacao = Column(Integer)
+    paginas = Column(String)
+    ano_publicacao = Column(String)
     capa = Column(String)
     pdf = Column(String)
-    classficacao = Column(Integer)
+    classficacao = Column(String)
     sinopse = Column(String)
     criado_em = Column(DateTime, default=current_time)  # Campo de data e hora de criação com valor padrão
 

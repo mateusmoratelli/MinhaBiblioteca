@@ -21,11 +21,19 @@ def create_livro(db: Session, titulo: str, autor: str, editora: str, genero: str
    db.refresh(livro)
    return livro
 
-def get_livro(db: Session, livro_id: int):
+def get_livro_by_id(db: Session, livro_id: int):
    return db.query(Livros).filter(Livros.id == livro_id).first()
 
+
+def get_livro_by_titulo(db: Session, titulo: str):
+   return db.query(Livros).filter(Livros.titulo == titulo).first()
+
+
+
 def get_all_livros(db: Session, skip: int = 0, limit: int = 10):
-   return db.query(Livros).offset(skip).limit(limit).all()
+   return db.query(Livros).order_by(Livros.titulo).offset(skip).limit(limit).all()
+
+
 
 def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = None, editora: str = None, genero: str = None, isbn: str = None, paginas: int = None, ano_publicacao: int = None, capa: str = None, pdf: str = None, classficacao: int = None, sinopse: str = None):
    livro = db.query(Livros).filter(Livros.id == livro_id).first()

@@ -36,7 +36,7 @@ class CadastroCategoria(uiCateg.QtWidgets.QWidget):
         self.ui.itemSelected = False
         # busca na base de dados
         lst = _crudGenero.get_all_genero(self.dbsql, 0, 999999)
-        print(lst)
+        # print(lst)
         for i in lst:
             self.ui.lstGeneros.addItem(i.genero)
 

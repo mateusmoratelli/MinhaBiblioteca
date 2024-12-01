@@ -4,8 +4,12 @@ import importlib
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from globais import *
+import utils.files_manager as _fm
 
-DATABASE_URL = "sqlite:///./minha_biblioteca.db"
+DATABASE_URL = f"sqlite:///{PASTA_BASE}{SQL_FILE}"
+
+_fm.FileManager(PASTA_BASE).create_folder(PASTA_BASE)
 
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)

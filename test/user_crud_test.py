@@ -81,7 +81,7 @@ def run_crud_operations():
        )
        print(f"Created Livro: {livro}")
 
-       livro = get_livro(db, livro_id=livro.id)
+       livro = get_livro_by_id(db, livro_id=livro.id)
        print(f"Retrieved Livro: {livro}")
 
        updated_livro = update_livro(db, livro_id=livro.id, titulo="O Hobbit")

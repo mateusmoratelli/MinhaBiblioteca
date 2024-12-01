@@ -7,15 +7,20 @@ import screen.ui_controllers.controlar_tela_cadastro_genero as ctrlCadastro
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
+
+import database.crud.livros as _crudLivros
+import database.db_setup as dbSetup
 from globais import *
 
 
 class TelaMain():
     def __init__(self):
+        self.dbsql = dbSetup.SessionLocal()
         self.iniciarAplicacao()
         self.defineFuncoesMenu()
         self.defineFuncoesBotoes()
         self.acaoLimparCampos()
+        self.acaoBuscarLivros()
         sys.exit(self.app.exec_())
 
 
@@ -39,11 +44,22 @@ class TelaMain():
 
 
     def defineFuncoesBotoes(self):
-        self.ui.btBuscarLivros
+        self.ui.btAtualizar.clicked.connect(self.acaoBuscarLivros)
+        self.ui.btBuscarLivros.clicked.connect(self.acaoBuscarLivros)
         self.ui.btLerResumo.clicked.connect(self.acaoLerResumo)
         self.ui.btEditarLivro.clicked.connect(self.acaoEditarLivro)
         self.ui.btAbrirPDF.clicked.connect(self.acaoAbrirPdf)
         self.ui.btNovoLivro.clicked.connect(self.acaoNovoLivro)
+        self.ui.lstLivros.clicked.connect(self.acaoPegarItemSelecionado)
+
+
+
+    def acaoBuscarLivros(self):
+        print("buscar livros no banco de dados.")
+        self.ui.lstLivros.clear()
+        lst = _crudLivros.get_all_livros(self.dbsql, 0, 999999)
+        for i in lst: 
+            self.ui.lstLivros.addItem(i.titulo)
 
 
 
@@ -62,17 +78,44 @@ class TelaMain():
         self.ui.txtSinopse.setText("")
         pixmap = QtGui.QPixmap("resources/img/capa_programa_principal.png")     # caminho da imagem 
         self.ui.lbCapa.setPixmap(pixmap)                                        # Seta um pixmap
-        self.ui.lbCapa.setScaledContents(True)                                  # Ajusta a imagem para ocupar todo o espaço do QLabel        
+        self.ui.lbCapa.setScaledContents(True)  
+        self.ui.lbID.setText("0000")
+        
+        
+
+    def acaoPegarItemSelecionado(self):
+        self.itemSelecionado = self.ui.lstLivros.currentItem()                                # Ajusta a imagem para ocupar todo o espaço do QLabel        
 
 
 
     def acaoNovoLivro(self):
         print("menu novo livro")
         self.ui.statusbar.showMessage(f"Cadastrar novo livro", 3000)
-        self.telaLivro = ctrlLivros.CadastrarLivro()
+        self.telaLivro = ctrlLivros.CadastrarLivro("", False)
         self.telaLivro.show()
     
 
+
+    def acaoPegarItemSelecionado(self):
+        livroMarcado = self.ui.lstLivros.currentItem().text()
+        if livroMarcado is not None:
+            dbLivros = _crudLivros.get_livro_by_titulo(self.dbsql, livroMarcado)
+            self.ui.lbTituloLivro.setText(dbLivros.titulo)
+            self.ui.lbAutor.setText(dbLivros.autor)
+            self.ui.lbEditora.setText(dbLivros.editora)
+            self.ui.lbGenero.setText(dbLivros.genero)
+            self.ui.lbIsbn.setText(dbLivros.isbn)
+            self.ui.lbAnoPublicacao.setText(str(dbLivros.ano_publicacao))
+            self.ui.lbPDF.setText(dbLivros.pdf)
+            self.ui.lbPaginas.setText(str(dbLivros.paginas))
+            # self.ui.lbPaginasLidas.setText(dbLivros.)
+            self.ui.lbClassificacao.setText(str(dbLivros.classficacao))
+            self.ui.txtSinopse.setText(dbLivros.sinopse)
+            pixmap = QtGui.QPixmap(dbLivros.capa)     # caminho da imagem 
+            self.ui.lbCapa.setPixmap(pixmap)                                        # Seta um pixmap
+            self.ui.lbCapa.setScaledContents(True)    
+            self.ui.lbID.setText(str(dbLivros.id))     
+            print(dbLivros)    
 
     def acaoNovoGeneroLivro(self):
         print("menu novo gênero de livro")

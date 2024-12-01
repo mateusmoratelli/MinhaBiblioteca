@@ -1,24 +1,23 @@
 # import test.user_crud_test as _myCrud
 import screen.ui_controllers.controlar_tela_main as telaMain
-import test.user_crud_test as testarCrud
-
-VERSION = "1.0.0"
-APP = "TESTE DE TELAS "
-REV = "2024.11.13"
-BY = "MATEUS MORATELLI"
-
-
+from globais import * 
+from utils.files_manager import FileManager as fileManeger
+# import test.user_crud_test as testarCrud
+ 
 if __name__ == "__main__":
     print(f"""
           
     ###############################################################      
         BEM VINDO AO PROGRAMA
         {APP}  
-        VERSÃO: {VERSION} - Relesed: {REV}
+        VERSÃO: {VERSION} - Relesed: {RELEASED}
         by: {BY}
     ###############################################################
         
     """)
-    testarCrud.run_crud_operations()
+
+    # Verificar se a pasta existe caso não existe criar. 
+    fileManeger(PASTA_BASE).create_folder(PASTA_BASE)
+    # testarCrud.run_crud_operations()
     telaMain.TelaMain()
 
