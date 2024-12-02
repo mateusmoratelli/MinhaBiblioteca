@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1313</width>
-    <height>734</height>
+    <height>722</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -59,7 +59,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbTituloLivro</string>
        </property>
       </widget>
      </item>
@@ -85,7 +85,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbAutor</string>
        </property>
       </widget>
      </item>
@@ -111,7 +111,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbEditora</string>
        </property>
       </widget>
      </item>
@@ -137,7 +137,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbGenero</string>
        </property>
       </widget>
      </item>
@@ -163,7 +163,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbIsbn</string>
        </property>
       </widget>
      </item>
@@ -189,7 +189,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbAnoPublicacao</string>
        </property>
       </widget>
      </item>
@@ -215,7 +215,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbPDF</string>
        </property>
       </widget>
      </item>
@@ -241,7 +241,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbPaginas</string>
        </property>
       </widget>
      </item>
@@ -267,7 +267,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbPaginasLidas</string>
        </property>
       </widget>
      </item>
@@ -293,7 +293,7 @@
         </font>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>lbClassificacao</string>
        </property>
       </widget>
      </item>
