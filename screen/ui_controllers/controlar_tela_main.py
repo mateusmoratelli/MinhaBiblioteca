@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 import screen.ui_generated.screen_main as uiMain
-import screen.ui_controllers.controlar_tela_cadastro_genero as ctrlCadastro
+import screen.ui_controllers.controlar_tela_cadastro_categorias as ctrlCategoria
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
@@ -37,7 +37,7 @@ class TelaMain():
 
     def defineFuncoesMenu(self):
         self.ui.menuNovoLivro.triggered.connect(self.acaoNovoLivro)
-        self.ui.menuCadatrarGenero.triggered.connect(self.acaoNovoGeneroLivro)
+        self.ui.menuCadatrarCategorias.triggered.connect(self.acaoNovaCategoria)
         self.ui.menuCadastrarUsuario.triggered.connect(self.acaoCadastroUsuarios)
         self.ui.menuSobrePrograma.triggered.connect(self.acaoAbrirTelaSobreSistema)
 
@@ -117,10 +117,10 @@ class TelaMain():
             self.ui.lbID.setText(str(dbLivros.id))     
             print(dbLivros)    
 
-    def acaoNovoGeneroLivro(self):
+    def acaoNovaCategoria(self):
         print("menu novo gênero de livro")
         self.ui.statusbar.showMessage(f"Cadastrar nova categoria", 3000)
-        self.telaCateg = ctrlCadastro.CadastroCategoria()
+        self.telaCateg = ctrlCategoria.CadastroCategoria()
         self.telaCateg.show()
 
 

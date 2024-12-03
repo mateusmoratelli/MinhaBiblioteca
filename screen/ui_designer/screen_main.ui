@@ -28,9 +28,15 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
     <item>
      <property name="text">
-      <string>item1</string>
+      <string>item1 itemxxxx item1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 \nitemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxx</string>
      </property>
     </item>
     <item>
@@ -661,7 +667,7 @@
      <string>Cadastrar</string>
     </property>
     <addaction name="menuNovoLivro"/>
-    <addaction name="menuCadatrarGenero"/>
+    <addaction name="menuCadatrarCategorias"/>
     <addaction name="separator"/>
     <addaction name="menuCadastrarUsuario"/>
    </widget>
@@ -682,9 +688,9 @@
     <string>Novo Livro</string>
    </property>
   </action>
-  <action name="menuCadatrarGenero">
+  <action name="menuCadatrarCategorias">
    <property name="text">
-    <string>Cadastrar Gêneros</string>
+    <string>Cadastrar Categoria</string>
    </property>
   </action>
   <action name="menuCadastrarUsuario">

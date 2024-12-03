@@ -32,7 +32,8 @@ def search_genero_by_name(db: Session, search_term: str):
 
 
 def get_all_genero(db: Session, skip: int = 0, limit: int = 10):
-   return db.query(Genero).order_by(Genero.genero).offset(skip).limit(limit).all()
+   dbList = db.query(Genero).order_by(Genero.genero).offset(skip).limit(limit).all()
+   return dbList
 
 
 def update_genero(db: Session, genero_id: int, genero: str = None):

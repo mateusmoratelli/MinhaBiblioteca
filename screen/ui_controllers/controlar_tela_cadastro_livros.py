@@ -7,6 +7,7 @@ import sys
 from globais import * 
 import screen.ui_generated.screen_cadastro_livros as uiLivros
 import database.crud.livros as _crudLivros
+import database.crud.genero as _crudGenero
 import database.db_setup as dbSetup
 import utils.files_manager as _fm
 import utils.funcoes_globais as _utis
@@ -24,6 +25,7 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
         self.uuid = _utis.gerarUUID()
         self.iniciarTela()
         self.defineBotoes()
+        self.acaoBuscarCategorias()
 
 
 
@@ -58,7 +60,14 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
         
         print(f"\nLivro gravado com sucesso. {gravado}")
 
- 
+
+    def acaoBuscarCategorias(self):
+        self.ui.cbGenero.clear()
+        lstDbCategoria = _crudGenero.get_all_genero(self.dbsql,0, 999999)
+        for i in lstDbCategoria:
+            self.ui.cbGenero.addItem(i.genero)
+            
+
 
     def acaoExcluir(self):
         print("Botão Excluir clicado")
