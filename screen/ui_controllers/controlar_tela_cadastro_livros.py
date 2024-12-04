@@ -9,7 +9,7 @@ import screen.ui_generated.screen_cadastro_livros as uiLivros
 import database.crud.livros as _crudLivros
 import database.crud.tema as _crudTemas
 import database.db_setup as dbSetup
-import utils.files_manager as _fm
+import utils.files_manager as fileMana
 import utils.funcoes_globais as _utis
 from pathlib import Path # para pegar dados do arquivo. 
 
@@ -115,7 +115,7 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
             nome_arquivo_com_extensao = Path(file_name).name
             dest_file = f"{self.uuid}_{nome_arquivo_com_extensao}"
             # copiar para pasta
-            _fm.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
+            fileMana.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
 
             self.capa = f"{PASTA_BASE}{dest_file}"
             pixmap = QtGui.QPixmap(self.capa)     # caminho da imagem 
@@ -138,6 +138,6 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
             nome_arquivo_com_extensao = Path(file_name).name
             dest_file = f"{self.uuid}_{nome_arquivo_com_extensao}"
             # copiar para pasta
-            _fm.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
+            fileMana.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
             self.pdf = f"{PASTA_BASE}{dest_file}"
             self.ui.lbStatus.setText(f"PDF enviado com sucesso: {self.pdf}")
