@@ -1,7 +1,18 @@
+"""
+Arquivo: crud/livros.py
+Descrição: Contém funções de manipulação de dados (CRUD) para o modelo 'Livros'.
+Autor: Mateus Moratelli
+Data de Criação: 2024-12-04
+Última Modificação: 2024-12-04
+Detalhes:
+    - Funções para criar, ler, atualizar e deletar informações relacionadas a livros.
+    - Implementação baseada no SQLAlchemy.
+"""
+
 from sqlalchemy.orm import Session
 from models.livros import Livros
 
-# CRUD para Livros
+
 def create_livro(db: Session, titulo: str, autor: str, editora: str, tema: str, isbn: str, paginas: int, ano_publicacao: int, capa: str, pdf: str, classficacao: int, sinopse: str):
    livro = Livros(
        titulo=titulo,
@@ -20,6 +31,8 @@ def create_livro(db: Session, titulo: str, autor: str, editora: str, tema: str, 
    db.commit()
    db.refresh(livro)
    return livro
+
+
 
 def get_livro_by_id(db: Session, livro_id: int):
    return db.query(Livros).filter(Livros.id == livro_id).first()
@@ -63,6 +76,8 @@ def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = No
        db.commit()
        db.refresh(livro)
    return livro
+
+
 
 def delete_livro(db: Session, livro_id: int):
    livro = db.query(Livros).filter(Livros.id == livro_id).first()

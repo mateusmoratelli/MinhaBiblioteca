@@ -4,7 +4,7 @@ import sys
 
 import screen.ui_generated.screen_cadastro_usuarios as uiUser
 import database.db_setup as dbSetup
-import database.crud.user as _crudUser
+import database.crud.usuario as _crudUser
 
 
 class CadastrarUsuario(uiUser.QtWidgets.QWidget):

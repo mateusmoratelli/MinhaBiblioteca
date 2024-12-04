@@ -1,5 +1,17 @@
+"""
+Arquivo: models/livros.py
+Descrição: Define a estrutura de dados para o modelo 'Livros'.
+Autor: Mateus Moratelli
+Data de Criação: 2024-12-04
+Última Modificação: 2024-12-04
+Detalhes:
+    - Representa informações detalhadas sobre livros no banco de dados.
+    - Inclui atributos como título, autor, editora, ISBN, sinopse, e arquivos relacionados (PDF/capa).
+"""
+
+
 from sqlalchemy import Column, Integer, String, DateTime
-from database.db_setup import Base
+from database.db_setup import Base, engine  # Importa o engine para criação das tabelas
 from utils.time_utils import current_time
 
 class Livros(Base):
@@ -26,3 +38,6 @@ class Livros(Base):
                 f"paginas={self.paginas}, ano_publicacao={self.ano_publicacao}, capa='{self.capa}', "
                 f"pdf='{self.pdf}', classficacao={self.classficacao}, sinopse='{self.sinopse}', "
                 f"criado_em={self.criado_em})")
+    
+# Inicializa a tabela no banco de dados ao importar o arquivo
+Base.metadata.create_all(bind=engine)

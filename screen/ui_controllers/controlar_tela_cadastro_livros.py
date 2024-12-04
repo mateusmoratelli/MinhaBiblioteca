@@ -7,7 +7,7 @@ import sys
 from globais import * 
 import screen.ui_generated.screen_cadastro_livros as uiLivros
 import database.crud.livros as _crudLivros
-import database.crud.temas as _crudTemas
+import database.crud.tema as _crudTemas
 import database.db_setup as dbSetup
 import utils.files_manager as _fm
 import utils.funcoes_globais as _utis

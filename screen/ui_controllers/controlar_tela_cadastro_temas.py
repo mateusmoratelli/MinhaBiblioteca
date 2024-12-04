@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 import screen.ui_generated.screen_cadastro_temas as uiTemas
-import database.crud.temas as _crudTemas
+import database.crud.tema as _crudTemas
 import database.db_setup as dbSetup
 
 

@@ -23,6 +23,9 @@ class SobreSistema(uiSobre.QtWidgets.QWidget):
         self.ui.lbSite.setText(WEBSITE)
         self.ui.lbSoftware.setText(APP)
         self.ui.lbVersao.setText(VERSION)
+        self.ui.lbPastaBase.setText(PASTA_BASE)
+        self.ui.lbDataBase.setText(SQL_FILE)
+        
     
  
 

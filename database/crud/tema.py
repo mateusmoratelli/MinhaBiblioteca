@@ -1,3 +1,14 @@
+"""
+Arquivo: crud/tema.py
+Descrição: Contém funções de manipulação de dados (CRUD) para o modelo 'Tema'.
+Autor: Mateus Moratelli
+Data de Criação: 2024-12-04
+Última Modificação: 2024-12-04
+Detalhes:
+    - Funções para criar, ler, atualizar e deletar temas de livros.
+    - Inclui lógica para listar temas disponíveis.
+"""
+
 from sqlalchemy.orm import Session
 from models.tema import Tema
 

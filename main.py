@@ -17,7 +17,6 @@ if __name__ == "__main__":
         
     """)
 
-    dtema.inicio()
     # Verificar se a pasta existe caso não existe criar. 
     fileManeger(PASTA_BASE).create_folder(PASTA_BASE)
     # testarCrud.run_crud_operations()

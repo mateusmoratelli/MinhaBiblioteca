@@ -1,5 +1,5 @@
 from database.db_setup import SessionLocal
-from database.crud.user import *
+from database.crud.usuario import *
 from database.crud.livro_genero import *
 # from database.crud.genero import *
 from database.crud.livros import *

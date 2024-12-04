@@ -1,3 +1,14 @@
+"""
+Arquivo: crud/setup.py
+Descrição: Contém funções de manipulação de dados (CRUD) para o modelo 'Setup'.
+Autor: Mateus Moratelli
+Data de Criação: 2024-12-04
+Última Modificação: 2024-12-04
+Detalhes:
+    - Funções para gerenciar configurações do sistema.
+    - Utilizado para armazenar valores de configuração chave-valor no banco de dados.
+"""
+
 from sqlalchemy.orm import Session
 from models.setup import Setup
 
