@@ -247,7 +247,7 @@ class Ui_Form(object):
         self.label_11.setText(_translate("Form", "Sinópse"))
         self.btExcluirLivro.setText(_translate("Form", "Excluir livro"))
         self.btEnviarPDF.setText(_translate("Form", "Enviar PDF"))
-        self.lbStatus.setText(_translate("Form", "Classificação"))
+        self.lbStatus.setText(_translate("Form", "lbStatus"))
 
 
 if __name__ == "__main__":
