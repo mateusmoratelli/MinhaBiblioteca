@@ -162,16 +162,22 @@
        </font>
       </property>
       <property name="text">
-       <string>Genero</string>
+       <string>Tema</string>
       </property>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QComboBox" name="cbGenero">
+     <widget class="QComboBox" name="cbTema">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="font">
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="editable">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
@@ -336,7 +342,7 @@
   <widget class="QPushButton" name="btAlterarCapa">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>360</x>
      <y>590</y>
      <width>121</width>
      <height>51</height>
@@ -435,6 +441,26 @@
      <width>24</width>
      <height>24</height>
     </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lbStatus">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>640</y>
+     <width>851</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Classificação</string>
    </property>
   </widget>
  </widget>

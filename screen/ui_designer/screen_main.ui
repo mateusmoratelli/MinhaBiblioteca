@@ -214,19 +214,19 @@
         </font>
        </property>
        <property name="text">
-        <string>Gênero:</string>
+        <string>Tema</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLabel" name="lbGenero">
+      <widget class="QLabel" name="lbTema">
        <property name="font">
         <font>
          <pointsize>12</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>lbGenero</string>
+        <string>lbTema</string>
        </property>
       </widget>
      </item>
@@ -667,7 +667,7 @@
      <string>Cadastrar</string>
     </property>
     <addaction name="menuNovoLivro"/>
-    <addaction name="menuCadatrarCategorias"/>
+    <addaction name="menuCadatrarTemas"/>
     <addaction name="separator"/>
     <addaction name="menuCadastrarUsuario"/>
    </widget>
@@ -688,9 +688,9 @@
     <string>Novo Livro</string>
    </property>
   </action>
-  <action name="menuCadatrarCategorias">
+  <action name="menuCadatrarTemas">
    <property name="text">
-    <string>Cadastrar Categoria</string>
+    <string>Cadastrar Temas</string>
    </property>
   </action>
   <action name="menuCadastrarUsuario">

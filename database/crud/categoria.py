@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from models.categorias import Categoria
+from models.categoria import Categoria
 
 # CRUD para categoria
 def create_categoria(db: Session, categoria: str):

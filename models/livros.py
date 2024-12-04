@@ -9,7 +9,7 @@ class Livros(Base):
     titulo = Column(String, nullable=False)
     autor = Column(String)
     editora = Column(String)
-    genero = Column(String)
+    tema = Column(String)
     isbn = Column(String)
     paginas = Column(String)
     ano_publicacao = Column(String)
@@ -22,7 +22,7 @@ class Livros(Base):
 
     def __repr__(self):
         return (f"Livros(id={self.id}, titulo='{self.titulo}', autor='{self.autor}', "
-                f"editora='{self.editora}', genero='{self.genero}', isbn='{self.isbn}', "
+                f"editora='{self.editora}', tema='{self.tema}', isbn='{self.isbn}', "
                 f"paginas={self.paginas}, ano_publicacao={self.ano_publicacao}, capa='{self.capa}', "
                 f"pdf='{self.pdf}', classficacao={self.classficacao}, sinopse='{self.sinopse}', "
                 f"criado_em={self.criado_em})")

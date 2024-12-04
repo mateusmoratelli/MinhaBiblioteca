@@ -3,7 +3,7 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 import screen.ui_generated.screen_main as uiMain
-import screen.ui_controllers.controlar_tela_cadastro_categorias as ctrlCategoria
+import screen.ui_controllers.controlar_tela_cadastro_temas as ctrlTemas
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
@@ -37,7 +37,7 @@ class TelaMain():
 
     def defineFuncoesMenu(self):
         self.ui.menuNovoLivro.triggered.connect(self.acaoNovoLivro)
-        self.ui.menuCadatrarCategorias.triggered.connect(self.acaoNovaCategoria)
+        self.ui.menuCadatrarTemas.triggered.connect(self.acaoNovoTema)
         self.ui.menuCadastrarUsuario.triggered.connect(self.acaoCadastroUsuarios)
         self.ui.menuSobrePrograma.triggered.connect(self.acaoAbrirTelaSobreSistema)
 
@@ -68,7 +68,7 @@ class TelaMain():
         self.ui.lbTituloLivro.setText("")
         self.ui.lbAutor.setText("")
         self.ui.lbEditora.setText("")
-        self.ui.lbGenero.setText("")
+        self.ui.lbTema.setText("")
         self.ui.lbIsbn.setText("")
         self.ui.lbAnoPublicacao.setText("")
         self.ui.lbPDF.setText("")
@@ -91,9 +91,18 @@ class TelaMain():
     def acaoNovoLivro(self):
         print("menu novo livro")
         self.ui.statusbar.showMessage(f"Cadastrar novo livro", 3000)
-        self.telaLivro = ctrlLivros.CadastrarLivro("", False)
+        self.telaLivro = ctrlLivros.CadastrarLivro(None, True)
         self.telaLivro.show()
     
+
+
+    def acaoEditarLivro(self):
+        print("menu novo livro")
+        idLivro = int(self.ui.lbID.text())
+        self.ui.statusbar.showMessage(f"Editar livro: {idLivro}", 3000)
+        self.telaLivro = ctrlLivros.CadastrarLivro(idLivro, False)
+        self.telaLivro.show()
+
 
 
     def acaoPegarItemSelecionado(self):
@@ -103,7 +112,7 @@ class TelaMain():
             self.ui.lbTituloLivro.setText(dbLivros.titulo)
             self.ui.lbAutor.setText(dbLivros.autor)
             self.ui.lbEditora.setText(dbLivros.editora)
-            self.ui.lbGenero.setText(dbLivros.genero)
+            self.ui.lbTema.setText(dbLivros.tema)
             self.ui.lbIsbn.setText(dbLivros.isbn)
             self.ui.lbAnoPublicacao.setText(str(dbLivros.ano_publicacao))
             self.ui.lbPDF.setText(dbLivros.pdf)
@@ -117,11 +126,11 @@ class TelaMain():
             self.ui.lbID.setText(str(dbLivros.id))     
             print(dbLivros)    
 
-    def acaoNovaCategoria(self):
+    def acaoNovoTema(self):
         print("menu novo gênero de livro")
-        self.ui.statusbar.showMessage(f"Cadastrar nova categoria", 3000)
-        self.telaCateg = ctrlCategoria.CadastroCategoria()
-        self.telaCateg.show()
+        self.ui.statusbar.showMessage(f"Cadastrar novo tema", 3000)
+        self.telaTema = ctrlTemas.CadastrarTemas()
+        self.telaTema.show()
 
 
     
@@ -141,11 +150,6 @@ class TelaMain():
 
     def acaoLerResumo(self):
         print("Ler resumo do livro")
-
-
-
-    def acaoEditarLivro(Self):
-        print("Editar Livro")
 
 
 

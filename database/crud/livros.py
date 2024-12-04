@@ -2,12 +2,12 @@ from sqlalchemy.orm import Session
 from models.livros import Livros
 
 # CRUD para Livros
-def create_livro(db: Session, titulo: str, autor: str, editora: str, genero: str, isbn: str, paginas: int, ano_publicacao: int, capa: str, pdf: str, classficacao: int, sinopse: str):
+def create_livro(db: Session, titulo: str, autor: str, editora: str, tema: str, isbn: str, paginas: int, ano_publicacao: int, capa: str, pdf: str, classficacao: int, sinopse: str):
    livro = Livros(
        titulo=titulo,
        autor=autor,
        editora=editora,
-       genero=genero,
+       tema=tema,
        isbn=isbn,
        paginas=paginas,
        ano_publicacao=ano_publicacao,
@@ -35,7 +35,7 @@ def get_all_livros(db: Session, skip: int = 0, limit: int = 10):
 
 
 
-def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = None, editora: str = None, genero: str = None, isbn: str = None, paginas: int = None, ano_publicacao: int = None, capa: str = None, pdf: str = None, classficacao: int = None, sinopse: str = None):
+def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = None, editora: str = None, tema: str = None, isbn: str = None, paginas: int = None, ano_publicacao: int = None, capa: str = None, pdf: str = None, classficacao: int = None, sinopse: str = None):
    livro = db.query(Livros).filter(Livros.id == livro_id).first()
    if livro:
        if titulo:
@@ -44,8 +44,8 @@ def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = No
            livro.autor = autor
        if editora:
            livro.editora = editora
-       if genero:
-           livro.genero = genero
+       if tema:
+           livro.tema = tema
        if isbn:
            livro.isbn = isbn
        if paginas:
