@@ -1,3 +1,33 @@
+"""
+Arquivo: file_manager.py
+Descrição: Classe utilitária para gerenciamento de arquivos e pastas.
+Autor: [Seu Nome]
+Data de Criação: 2024-12-04
+Última Modificação: 2024-12-04
+Detalhes:
+    - A classe `FileManager` fornece métodos para operações comuns de manipulação de arquivos e pastas.
+    - Funcionalidades incluem:
+        - Criação e exclusão de pastas.
+        - Listagem de arquivos e subpastas.
+        - Operações com arquivos (copiar, mover, deletar).
+        - Leitura e escrita de arquivos.
+    - A classe foi projetada para trabalhar dentro de um caminho base definido pelo usuário ou padrão (`.`).
+
+Exemplo de uso:
+    ```python
+    fm = FileManager("/caminho/para/base")
+    fm.create_folder("nova_pasta")
+    fm.write_file("nova_pasta/arquivo.txt", "Conteúdo de exemplo.")
+    arquivos = fm.list_files("nova_pasta")
+    print(arquivos)
+    fm.delete_file("nova_pasta/arquivo.txt")
+    fm.delete_folder("nova_pasta")
+    ```
+Requisitos:
+    - Biblioteca padrão do Python (`os`, `shutil`).
+"""
+
+
 import os
 import shutil
 
@@ -5,6 +35,11 @@ class FileManager:
     def __init__(self, base_path='.'):
         """
         Inicializa o FileManager com um caminho base.
+        Este método configura o caminho base onde as operações de gerenciamento de 
+        arquivos e pastas serão realizadas. O valor padrão é o diretório atual ('.').
+        Args:
+            base_path (str): Caminho base para operações de arquivos. O valor 
+                            padrão é o diretório atual.
         """
         self.base_path = os.path.abspath(base_path)
 
@@ -13,6 +48,14 @@ class FileManager:
     def create_folder(self, folder_name):
         """
         Verifica se a pasta existe no caminho base; caso não exista, cria.
+        Este método verifica se a pasta especificada já existe no diretório base.
+        Se não existir, ela será criada.
+        Args:
+            folder_name (str): Nome da pasta a ser criada.
+        Returns:
+            str: O caminho completo da pasta criada.
+        Raises:
+            OSError: Se ocorrer algum erro ao criar a pasta.
         """
         folder_path = os.path.join(self.base_path, folder_name)
         if not os.path.exists(folder_path):
@@ -27,6 +70,17 @@ class FileManager:
     def delete_folder(self, folder_name):
         """
         Remove uma pasta e todo o seu conteúdo.
+        Este método exclui a pasta e todos os arquivos e subpastas dentro dela, 
+        sem pedir confirmação adicional. Caso a pasta não exista, será gerado 
+        um erro do tipo FileNotFoundError.
+        Args:
+            folder_name (str): Nome da pasta que será deletada. Este parâmetro 
+                               deve ser o nome da pasta ou o caminho relativo à 
+                               pasta base.
+        Raises:
+            FileNotFoundError: Se a pasta especificada não for encontrada no 
+                                diretório base.
+            OSError: Se ocorrer algum erro ao remover a pasta.
         """
         folder_path = os.path.join(self.base_path, folder_name)
         if os.path.exists(folder_path):
@@ -39,6 +93,16 @@ class FileManager:
     def list_files(self, folder_name=None):
         """
         Lista os arquivos em um diretório específico ou no caminho base.
+        Este método retorna uma lista de arquivos no diretório especificado. Se
+        o diretório não for fornecido, ele lista os arquivos no caminho base.
+        Args:
+            folder_name (str, optional): Nome do diretório onde os arquivos 
+                                          serão listados. Se não for fornecido, 
+                                          a lista será dos arquivos no caminho base.
+        Returns:
+            list: Lista de nomes de arquivos no diretório especificado.
+        Raises:
+            FileNotFoundError: Se o diretório especificado não for encontrado.
         """
         folder_path = self.base_path if folder_name is None else os.path.join(self.base_path, folder_name)
         if os.path.exists(folder_path):
@@ -51,6 +115,16 @@ class FileManager:
     def list_folders(self, folder_name=None):
         """
         Lista as subpastas em um diretório específico ou no caminho base.
+        Este método retorna uma lista de subpastas no diretório especificado.
+        Se o diretório não for fornecido, ele lista as subpastas no caminho base.
+        Args:
+            folder_name (str, optional): Nome do diretório onde as pastas serão 
+                                          listadas. Se não for fornecido, a lista 
+                                          será das pastas no caminho base.
+        Returns:
+            list: Lista de nomes de subpastas no diretório especificado.
+        Raises:
+            FileNotFoundError: Se o diretório especificado não for encontrado.
         """
         folder_path = self.base_path if folder_name is None else os.path.join(self.base_path, folder_name)
         if os.path.exists(folder_path):
@@ -63,6 +137,19 @@ class FileManager:
     def copy_file(self, src_file, dest_folder, dest_file):
         """
         Copia um arquivo para uma pasta de destino.
+        Este método copia um arquivo do diretório base para a pasta de destino 
+        especificada. Se a pasta de destino não existir, ela será criada. O arquivo 
+        será copiado com o mesmo nome ou com o nome especificado no parâmetro 
+        `dest_file`.
+        Args:
+            src_file (str): Caminho do arquivo de origem a ser copiado.
+            dest_folder (str): Nome ou caminho da pasta de destino.
+            dest_file (str): Nome do arquivo de destino.
+        Returns:
+            str: Caminho completo do arquivo copiado.
+        Raises:
+            FileNotFoundError: Se o arquivo de origem não for encontrado.
+            OSError: Se ocorrer algum erro ao copiar o arquivo.
         """
         src_path = os.path.join(self.base_path, src_file)
         dest_path = os.path.join(self.base_path, dest_folder, os.path.basename(dest_file))
@@ -79,6 +166,16 @@ class FileManager:
     def move_file(self, src_file, dest_folder):
         """
         Move um arquivo para uma pasta de destino.
+        Este método move um arquivo do diretório base para a pasta de destino 
+        especificada. Se a pasta de destino não existir, ela será criada.
+        Args:
+            src_file (str): Caminho do arquivo de origem a ser movido.
+            dest_folder (str): Nome ou caminho da pasta de destino.
+        Returns:
+            str: Caminho completo do arquivo movido.
+        Raises:
+            FileNotFoundError: Se o arquivo de origem não for encontrado.
+            OSError: Se ocorrer algum erro ao mover o arquivo.
         """
         src_path = os.path.join(self.base_path, src_file)
         dest_path = os.path.join(self.base_path, dest_folder, os.path.basename(src_file))
@@ -95,6 +192,13 @@ class FileManager:
     def delete_file(self, file_name):
         """
         Remove um arquivo.
+        Este método exclui um arquivo especificado no diretório base. Caso o arquivo 
+        não exista, será gerado um erro do tipo FileNotFoundError.
+        Args:
+            file_name (str): Nome do arquivo a ser deletado.
+        Raises:
+            FileNotFoundError: Se o arquivo especificado não for encontrado no diretório base.
+            OSError: Se ocorrer algum erro ao excluir o arquivo.
         """
         file_path = os.path.join(self.base_path, file_name)
         if os.path.exists(file_path):
@@ -107,6 +211,14 @@ class FileManager:
     def read_file(self, file_name):
         """
         Lê o conteúdo de um arquivo de texto.
+        Este método lê o conteúdo de um arquivo especificado no diretório base. 
+        Caso o arquivo não exista, será gerado um erro do tipo FileNotFoundError.
+        Args:
+            file_name (str): Nome do arquivo a ser lido.
+        Returns:
+            str: Conteúdo do arquivo lido.
+        Raises:
+            FileNotFoundError: Se o arquivo especificado não for encontrado.
         """
         file_path = os.path.join(self.base_path, file_name)
         if os.path.exists(file_path):
@@ -120,6 +232,13 @@ class FileManager:
     def write_file(self, file_name, content):
         """
         Escreve conteúdo em um arquivo. Se não existir, cria.
+        Este método escreve conteúdo em um arquivo no diretório base. Se o arquivo 
+        não existir, ele será criado. Se já existir, o conteúdo será sobrescrito.
+        Args:
+            file_name (str): Nome do arquivo a ser criado ou sobrescrito.
+            content (str): Conteúdo a ser escrito no arquivo.
+        Returns:
+            str: Caminho completo do arquivo criado ou sobrescrito.
         """
         file_path = os.path.join(self.base_path, file_name)
         with open(file_path, 'w', encoding='utf-8') as file:
