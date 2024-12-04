@@ -3,7 +3,7 @@ from database.db_setup import Base
 from utils.time_utils import current_time
 
 class Categoria(Base):
-    __tablename__ = 'categorias'
+    __tablename__ = 'categoria'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     categoria = Column(String, nullable=False)

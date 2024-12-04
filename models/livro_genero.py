@@ -3,7 +3,7 @@ from database.db_setup import Base
 from utils.time_utils import current_time
 
 class LivroGenero(Base):
-    __tablename__ = 'livro_genero'
+    __tablename__ = 'livrogenero'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     livro_id = Column(Integer, nullable=False)

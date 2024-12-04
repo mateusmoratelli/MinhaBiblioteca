@@ -1,5 +1,7 @@
-import screen.ui_controllers.definicoes_tela1 as _telaMain
+# import screen.ui_controllers.definicoes_tela1 as _telaMain
 from globais import *
+
+import test.debug_tema as dtema
  
 
 
@@ -15,5 +17,6 @@ if __name__ == "__main__":
     ###############################################################
         
     """)
-    _telaMain.screen01()    # chama a tela principal
+    # _telaMain.screen01()    # chama a tela principal
 
+    dtema.inicio()
