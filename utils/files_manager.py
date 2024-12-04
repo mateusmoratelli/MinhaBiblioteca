@@ -1,7 +1,7 @@
 """
 Arquivo: file_manager.py
 Descrição: Classe utilitária para gerenciamento de arquivos e pastas.
-Autor: [Seu Nome]
+Autor: Mateus Moratelli
 Data de Criação: 2024-12-04
 Última Modificação: 2024-12-04
 Detalhes:
