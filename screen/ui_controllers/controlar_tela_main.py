@@ -2,15 +2,21 @@ from argparse import Action
 from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
+# importar telas 
 import screen.ui_generated.screen_main as uiMain
 import screen.ui_controllers.controlar_tela_cadastro_temas as ctrlTemas
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
 
+# importar banco de dados
 import database.crud.livros as _crudLivros
 import database.db_setup as dbSetup
+
+# importar funções uteis
 from globais import *
+import utils.files_manager as fm
+
 
 
 class TelaMain():
@@ -50,6 +56,8 @@ class TelaMain():
         self.ui.btAbrirPDF.clicked.connect(self.acaoAbrirPdf)
         self.ui.btNovoLivro.clicked.connect(self.acaoNovoLivro)
         self.ui.lstLivros.clicked.connect(self.acaoPegarItemSelecionado)
+        # campo de pesquisa 
+        self.ui.txtBuscar.returnPressed.connect(self.acaoBuscarLivros)
 
 
 
@@ -84,10 +92,6 @@ class TelaMain():
         self.ui.lbCapa.setScaledContents(True)  
         self.ui.lbID.setText("0000")
         
-        
-
-    # def acaoPegarItemSelecionado(self):
-    #     self.itemSelecionado = self.ui.lstLivros.currentItem()                                # Ajusta a imagem para ocupar todo o espaço do QLabel        
 
 
 
@@ -115,13 +119,14 @@ class TelaMain():
         livroMarcado = self.ui.lstLivros.currentItem().text()
         if livroMarcado is not None:
             dbLivros = _crudLivros.get_livro_by_titulo(self.dbsql, livroMarcado)
+            print(dbLivros)   
             self.ui.lbTituloLivro.setText(dbLivros.titulo)
             self.ui.lbAutor.setText(dbLivros.autor)
             self.ui.lbEditora.setText(dbLivros.editora)
             self.ui.lbTema.setText(dbLivros.tema)
             self.ui.lbIsbn.setText(dbLivros.isbn)
             self.ui.lbAnoPublicacao.setText(str(dbLivros.ano_publicacao))
-            self.ui.lbPDF.setText(dbLivros.pdf)
+            
             self.ui.lbPaginas.setText(str(dbLivros.paginas))
             # self.ui.lbPaginasLidas.setText(dbLivros.)
             self.ui.lbClassificacao.setText(str(dbLivros.classficacao))
@@ -130,8 +135,19 @@ class TelaMain():
             self.ui.lbCapa.setPixmap(pixmap)                                        # Seta um pixmap
             self.ui.lbCapa.setScaledContents(True)    
             self.ui.lbID.setText(str(dbLivros.id))     
-            print(dbLivros)    
 
+            # verifica se exise PDF 
+            if  dbLivros.pdf != "":
+                self.ui.btAbrirPDF.setEnabled(True)
+                self.ui.lbPDF.setText("SIM")
+                self.pdf = dbLivros.pdf
+            else:
+                self.ui.btAbrirPDF.setEnabled(False)
+                self.ui.lbPDF.setText("NÃO")
+
+            # verifica a classificação
+            estrelas = "⭐" * int(dbLivros.classficacao)
+            self.ui.lbClassificacao.setText(str(estrelas))
 
 
     def acaoNovoTema(self):
@@ -162,7 +178,8 @@ class TelaMain():
 
 
     def acaoAbrirPdf(self):
-        print("Abrir pdf ")
+       print(self.pdf)
+       fm.FileManager().abrir_pdf(self.pdf)
     
 
 

@@ -30,6 +30,8 @@ Requisitos:
 
 import os
 import shutil
+import platform
+import subprocess
 
 class FileManager:
     def __init__(self, base_path='.'):
@@ -244,3 +246,35 @@ class FileManager:
         with open(file_path, 'w', encoding='utf-8') as file:
             file.write(content)
         return file_path
+
+
+
+    def abrir_pdf(self, caminho_arquivo: str):
+        """
+        Abre um arquivo PDF no programa padrão do sistema operacional.
+        Este método utiliza o programa padrão configurado no sistema operacional 
+        para abrir arquivos PDF. Ele é compatível com Windows, macOS e Linux, 
+        utilizando a abordagem apropriada para cada sistema.
+        
+        Args:
+            caminho_arquivo (str): Caminho completo ou relativo do arquivo PDF 
+                                que será aberto.
+
+        Raises:
+            FileNotFoundError: Se o arquivo especificado não for encontrado no 
+                            caminho fornecido.
+            Exception: Para outros erros gerais que possam ocorrer ao tentar abrir 
+                    o arquivo, como permissões insuficientes ou problemas no 
+                    sistema operacional.
+        """
+        try:
+            if platform.system() == "Windows":  # Windows
+                os.startfile(caminho_arquivo)
+            elif platform.system() == "Darwin":  # macOS
+                subprocess.run(["open", caminho_arquivo])
+            else:  # Linux/Unix
+                subprocess.run(["xdg-open", caminho_arquivo])
+        except FileNotFoundError:
+            print("Arquivo não encontrado.")
+        except Exception as e:
+            print(f"Ocorreu um erro ao tentar abrir o arquivo: {e}")

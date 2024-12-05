@@ -88,7 +88,7 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
                                             self.pdf, classificacao, sinopse)            
 
         self.ui.lbStatus.setText(f"Livro Gravado com sucesso, ID: {gravado.id} - {gravado.titulo}")
-        print(f"\nLivro gravado com sucesso. {gravado.id}")
+        print(f"\nLivro gravado com sucesso. {gravado}")
 
 
     def acaoBuscarTemas(self):

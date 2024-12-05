@@ -89,7 +89,7 @@ def update_livro(db: Session, livro_id: int, titulo: str = None, autor: str = No
            livro.capa = capa
        if pdf:
            livro.pdf = pdf
-       if classficacao:
+       if classficacao != None:
            livro.classficacao = classficacao
        if sinopse:
            livro.sinopse = sinopse

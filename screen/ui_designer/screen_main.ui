@@ -6,33 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1313</width>
-    <height>722</height>
+    <width>1303</width>
+    <height>796</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Minha Biblioteca</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>740</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
       <x>790</x>
       <y>70</y>
-      <width>521</width>
+      <width>501</width>
       <height>221</height>
      </rect>
     </property>
@@ -335,9 +322,9 @@
    <widget class="QPushButton" name="btBuscarLivros">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>330</x>
       <y>40</y>
-      <width>131</width>
+      <width>151</width>
       <height>31</height>
      </rect>
     </property>
@@ -595,7 +582,7 @@
      <rect>
       <x>789</x>
       <y>323</y>
-      <width>511</width>
+      <width>501</width>
       <height>351</height>
      </rect>
     </property>
@@ -611,7 +598,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1313</width>
+     <width>1303</width>
      <height>21</height>
     </rect>
    </property>
