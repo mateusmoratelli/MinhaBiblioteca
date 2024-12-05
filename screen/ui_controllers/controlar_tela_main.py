@@ -37,14 +37,13 @@ class TelaMain():
 
     def defineFuncoesMenu(self):
         self.ui.menuNovoLivro.triggered.connect(self.acaoNovoLivro)
-        self.ui.menuCadatrarTemas.triggered.connect(self.acaoNovoTema)
+        self.ui.menuCadatrarTema.triggered.connect(self.acaoNovoTema)
         self.ui.menuCadastrarUsuario.triggered.connect(self.acaoCadastroUsuarios)
         self.ui.menuSobrePrograma.triggered.connect(self.acaoAbrirTelaSobreSistema)
 
 
 
     def defineFuncoesBotoes(self):
-        self.ui.btAtualizar.clicked.connect(self.acaoBuscarLivros)
         self.ui.btBuscarLivros.clicked.connect(self.acaoBuscarLivros)
         self.ui.btLerResumo.clicked.connect(self.acaoLerResumo)
         self.ui.btEditarLivro.clicked.connect(self.acaoEditarLivro)
@@ -57,9 +56,13 @@ class TelaMain():
     def acaoBuscarLivros(self):
         print("buscar livros no banco de dados.")
         self.ui.lstLivros.clear()
-        lst = _crudLivros.get_all_livros(self.dbsql, 0, 999999)
+
+        txtBuscar = self.ui.txtBuscar.text()
+        lst = _crudLivros.get_livros_by_partial_titulo(self.dbsql, txtBuscar,0, 999999)
+        totalLivros = lst.__len__()
         for i in lst: 
             self.ui.lstLivros.addItem(i.titulo)
+        self.ui.statusbar.showMessage(f"Foram encontrados {totalLivros} livros")
 
 
 
@@ -83,8 +86,8 @@ class TelaMain():
         
         
 
-    def acaoPegarItemSelecionado(self):
-        self.itemSelecionado = self.ui.lstLivros.currentItem()                                # Ajusta a imagem para ocupar todo o espaço do QLabel        
+    # def acaoPegarItemSelecionado(self):
+    #     self.itemSelecionado = self.ui.lstLivros.currentItem()                                # Ajusta a imagem para ocupar todo o espaço do QLabel        
 
 
 
@@ -98,10 +101,13 @@ class TelaMain():
 
     def acaoEditarLivro(self):
         print("menu novo livro")
-        idLivro = int(self.ui.lbID.text())
-        self.ui.statusbar.showMessage(f"Editar livro: {idLivro}", 3000)
-        self.telaLivro = ctrlLivros.CadastrarLivro(idLivro, False)
-        self.telaLivro.show()
+        if  int(self.ui.lbID.text()) != 0:
+            idLivro = int(self.ui.lbID.text())
+            self.ui.statusbar.showMessage(f"Editar livro: {idLivro}", 3000)
+            self.telaLivro = ctrlLivros.CadastrarLivro(idLivro, False)
+            self.telaLivro.show()
+        else: 
+            self.ui.statusbar.showMessage("Selecione um livro!", 5000)
 
 
 
@@ -125,6 +131,8 @@ class TelaMain():
             self.ui.lbCapa.setScaledContents(True)    
             self.ui.lbID.setText(str(dbLivros.id))     
             print(dbLivros)    
+
+
 
     def acaoNovoTema(self):
         print("menu novo gênero de livro")

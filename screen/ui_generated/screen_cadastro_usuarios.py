@@ -30,7 +30,7 @@ class Ui_Form(object):
         self.lstUsuarios.setGeometry(QtCore.QRect(30, 90, 251, 371))
         self.lstUsuarios.setObjectName("lstUsuarios")
         self.btSalvarUsuario = QtWidgets.QPushButton(Form)
-        self.btSalvarUsuario.setGeometry(QtCore.QRect(290, 130, 121, 51))
+        self.btSalvarUsuario.setGeometry(QtCore.QRect(510, 130, 121, 51))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("screen/ui_designer\\../../resources/icons/save_16dp_48752C.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btSalvarUsuario.setIcon(icon)
@@ -59,12 +59,20 @@ class Ui_Form(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.btExcluirUsuario = QtWidgets.QPushButton(Form)
-        self.btExcluirUsuario.setGeometry(QtCore.QRect(510, 130, 121, 51))
+        self.btExcluirUsuario.setGeometry(QtCore.QRect(290, 130, 121, 51))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("screen/ui_designer\\../../resources/icons/delete_forever_16dp_BB271A.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btExcluirUsuario.setIcon(icon1)
         self.btExcluirUsuario.setIconSize(QtCore.QSize(24, 24))
         self.btExcluirUsuario.setObjectName("btExcluirUsuario")
+        self.lbStatus = QtWidgets.QLabel(Form)
+        self.lbStatus.setGeometry(QtCore.QRect(290, 440, 351, 16))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lbStatus.setFont(font)
+        self.lbStatus.setObjectName("lbStatus")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -77,6 +85,7 @@ class Ui_Form(object):
         self.label_2.setText(_translate("Form", "Usuário"))
         self.label_3.setText(_translate("Form", "Usuários cadastrados"))
         self.btExcluirUsuario.setText(_translate("Form", "Excluir"))
+        self.lbStatus.setText(_translate("Form", "lbStatus"))
 
 
 if __name__ == "__main__":

@@ -42,6 +42,26 @@ def get_livro_by_titulo(db: Session, titulo: str):
    return db.query(Livros).filter(Livros.titulo == titulo).first()
 
 
+def get_livros_by_partial_titulo(db: Session, partial_titulo: str, skip: int = 0, limit: int = 10):
+    """
+    Pesquisa livros cujo título contém o trecho fornecido (case insensitive).
+
+    :param db: Sessão do banco de dados.
+    :param partial_titulo: Trecho do título para busca.
+    :param skip: Número de registros para pular.
+    :param limit: Número máximo de registros a retornar.
+    :return: Lista de livros que contêm o trecho no título.
+    """
+    return (
+        db.query(Livros)
+        .filter(Livros.titulo.ilike(f"%{partial_titulo}%"))
+        .order_by(Livros.titulo)
+        .offset(skip)
+        .limit(limit)
+        .all()
+    )
+
+
 
 def get_all_livros(db: Session, skip: int = 0, limit: int = 10):
    return db.query(Livros).order_by(Livros.titulo).offset(skip).limit(limit).all()

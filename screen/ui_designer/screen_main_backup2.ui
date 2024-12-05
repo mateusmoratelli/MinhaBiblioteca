@@ -6,38 +6,153 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1313</width>
-    <height>722</height>
+    <width>1280</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Minha Biblioteca</string>
+   <string>Minha Biblioteca </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QListWidget" name="lstLivros">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>740</y>
-      <width>47</width>
-      <height>13</height>
+      <x>10</x>
+      <y>60</y>
+      <width>741</width>
+      <height>401</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>item1 itemxxxx item1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 \nitemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxxitem1 itemxxxx</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>item2</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>3</y>
+      <width>491</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btBuscarLivros">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>2</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Buscar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/search_24dp_5F6368.png</normaloff>../../resources/icons/search_24dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbCapa">
+    <property name="geometry">
+     <rect>
+      <x>1120</x>
+      <y>470</y>
+      <width>151</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../resources/img/capa_programa_principal.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>70</y>
-      <width>521</width>
-      <height>221</height>
+      <x>10</x>
+      <y>470</y>
+      <width>741</width>
+      <height>171</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
      <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Título:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lbTituloLivro">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>lbTituloLivro</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
       <widget class="QLabel" name="label_4">
        <property name="font">
         <font>
@@ -47,11 +162,11 @@
         </font>
        </property>
        <property name="text">
-        <string>Autor</string>
+        <string>Autor:</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
+     <item row="1" column="1">
       <widget class="QLabel" name="lbAutor">
        <property name="font">
         <font>
@@ -63,7 +178,7 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_6">
        <property name="font">
         <font>
@@ -73,11 +188,11 @@
         </font>
        </property>
        <property name="text">
-        <string>Editora</string>
+        <string>Editora:</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="1">
+     <item row="2" column="1">
       <widget class="QLabel" name="lbEditora">
        <property name="font">
         <font>
@@ -89,7 +204,7 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_8">
        <property name="font">
         <font>
@@ -103,7 +218,7 @@
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
+     <item row="3" column="1">
       <widget class="QLabel" name="lbTema">
        <property name="font">
         <font>
@@ -115,7 +230,7 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
+     <item row="4" column="0">
       <widget class="QLabel" name="label_10">
        <property name="font">
         <font>
@@ -125,11 +240,11 @@
         </font>
        </property>
        <property name="text">
-        <string>ISBN</string>
+        <string>ISBN:</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="1">
+     <item row="4" column="1">
       <widget class="QLabel" name="lbIsbn">
        <property name="font">
         <font>
@@ -138,32 +253,6 @@
        </property>
        <property name="text">
         <string>lbIsbn</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_14">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Ano publicação</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLabel" name="lbAnoPublicacao">
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>lbAnoPublicacao</string>
        </property>
       </widget>
      </item>
@@ -177,7 +266,7 @@
         </font>
        </property>
        <property name="text">
-        <string>PDF</string>
+        <string>PDF:</string>
        </property>
       </widget>
      </item>
@@ -194,6 +283,72 @@
       </widget>
      </item>
      <item row="6" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ID:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="lbID">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>0000</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="formLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>470</y>
+      <width>351</width>
+      <height>124</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Ano publicação:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="lbAnoPublicacao">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>lbAnoPublicacao</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
       <widget class="QLabel" name="label_12">
        <property name="font">
         <font>
@@ -203,11 +358,11 @@
         </font>
        </property>
        <property name="text">
-        <string>Páginas</string>
+        <string>Páginas:</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
+     <item row="1" column="1">
       <widget class="QLabel" name="lbPaginas">
        <property name="font">
         <font>
@@ -219,7 +374,7 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
+     <item row="2" column="0">
       <widget class="QLabel" name="label_13">
        <property name="font">
         <font>
@@ -229,11 +384,11 @@
         </font>
        </property>
        <property name="text">
-        <string>Páginas Lidas</string>
+        <string>Páginas Lidas:</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
+     <item row="2" column="1">
       <widget class="QLabel" name="lbPaginasLidas">
        <property name="font">
         <font>
@@ -245,7 +400,7 @@
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_18">
        <property name="font">
         <font>
@@ -255,11 +410,11 @@
         </font>
        </property>
        <property name="text">
-        <string>Classfiicação</string>
+        <string>Classficação:</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="1">
+     <item row="3" column="1">
       <widget class="QLabel" name="lbClassificacao">
        <property name="font">
         <font>
@@ -271,15 +426,180 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_19">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Usuário:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QComboBox" name="cbUsuarios">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
     </layout>
+   </widget>
+   <widget class="QTextEdit" name="txtSinopse">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>60</y>
+      <width>511</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>38</y>
+      <width>221</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Sinópse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>37</y>
+      <width>221</width>
+      <height>19</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Livros</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btAtualizar">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>0</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Atualizar</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/refresh_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</normaloff>../../resources/icons/refresh_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btEditarLivro">
+    <property name="geometry">
+     <rect>
+      <x>867</x>
+      <y>640</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Editar Livro</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/border_color_16dp_5F6368.png</normaloff>../../resources/icons/border_color_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btNovoLivro">
+    <property name="geometry">
+     <rect>
+      <x>867</x>
+      <y>607</y>
+      <width>120</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Novo Livro</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>../../resources/icons/library_books_16dp_5F6368.png</normaloff>../../resources/icons/library_books_16dp_5F6368.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>24</width>
+      <height>24</height>
+     </size>
+    </property>
    </widget>
    <widget class="QPushButton" name="btLerResumo">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>630</y>
+      <x>990</x>
+      <y>607</y>
       <width>120</width>
-      <height>50</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -307,10 +627,10 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>570</y>
+      <x>990</x>
+      <y>640</y>
       <width>120</width>
-      <height>50</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -332,305 +652,26 @@
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="btBuscarLivros">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>40</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Buscar</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../resources/icons/search_24dp_5F6368.png</normaloff>../../resources/icons/search_24dp_5F6368.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>24</width>
-      <height>24</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btNovoLivro">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>570</y>
-      <width>120</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Novo Livro</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../resources/icons/library_books_16dp_5F6368.png</normaloff>../../resources/icons/library_books_16dp_5F6368.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>24</width>
-      <height>24</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbCapa">
-    <property name="geometry">
-     <rect>
-      <x>490</x>
-      <y>70</y>
-      <width>291</width>
-      <height>371</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>../../resources/img/capa_programa_principal.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="txtBuscar">
-    <property name="geometry">
-     <rect>
-      <x>6</x>
-      <y>40</y>
-      <width>341</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btEditarLivro">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>630</y>
-      <width>120</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Editar Livro</string>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>../../resources/icons/border_color_16dp_5F6368.png</normaloff>../../resources/icons/border_color_16dp_5F6368.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>24</width>
-      <height>24</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Lista de Livros</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QListWidget" name="lstLivros">
-    <property name="geometry">
-     <rect>
-      <x>6</x>
-      <y>70</y>
-      <width>480</width>
-      <height>611</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <item>
-     <property name="text">
-      <string>item1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>item2</string>
-     </property>
-    </item>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>450</y>
-      <width>48</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>ID</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbID">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>450</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lbTituloLivro">
-    <property name="geometry">
-     <rect>
-      <x>500</x>
-      <y>30</y>
-      <width>801</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>16</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>lbTituloLivro</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_20">
-    <property name="geometry">
-     <rect>
-      <x>790</x>
-      <y>290</y>
-      <width>63</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="text">
-     <string>Sinopse</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="txtSinopse">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>789</x>
-      <y>323</y>
-      <width>511</width>
-      <height>351</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1313</width>
+     <width>1280</width>
      <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuCadastrar">
-    <property name="contextMenuPolicy">
-     <enum>Qt::DefaultContextMenu</enum>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
     <property name="title">
      <string>Cadastrar</string>
     </property>
     <addaction name="menuNovoLivro"/>
-    <addaction name="menuCadatrarTema"/>
+    <addaction name="menuCadatrarTemas"/>
     <addaction name="separator"/>
     <addaction name="menuCadastrarUsuario"/>
    </widget>
-   <widget class="QMenu" name="menuAjuda">
+   <widget class="QMenu" name="menuAjdua">
     <property name="title">
      <string>Ajuda</string>
     </property>
@@ -639,58 +680,32 @@
     <addaction name="menuEfetuarTeste"/>
    </widget>
    <addaction name="menuCadastrar"/>
-   <addaction name="menuAjuda"/>
+   <addaction name="menuAjdua"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="menuNovoLivro">
-   <property name="icon">
-    <iconset>
-     <normaloff>../../resources/icons/library_books_16dp_5F6368.png</normaloff>../../resources/icons/library_books_16dp_5F6368.png</iconset>
-   </property>
    <property name="text">
     <string>Novo Livro</string>
    </property>
   </action>
-  <action name="menuCadatrarTema">
-   <property name="icon">
-    <iconset>
-     <normaloff>../../resources/icons/format_list_bulleted_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</normaloff>../../resources/icons/format_list_bulleted_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</iconset>
-   </property>
+  <action name="menuCadatrarTemas">
    <property name="text">
-    <string>Cadastrar Tema</string>
+    <string>Cadastrar Temas</string>
    </property>
   </action>
   <action name="menuCadastrarUsuario">
-   <property name="icon">
-    <iconset>
-     <normaloff>../../resources/icons/person_add_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</normaloff>../../resources/icons/person_add_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</iconset>
-   </property>
    <property name="text">
     <string>Usuários</string>
    </property>
   </action>
-  <action name="actionResumo">
-   <property name="text">
-    <string>Resumo</string>
-   </property>
-  </action>
-  <action name="menuEfetuarTestes">
-   <property name="text">
-    <string> Efetuar Testes DB</string>
-   </property>
-  </action>
   <action name="menuSobrePrograma">
-   <property name="icon">
-    <iconset>
-     <normaloff>../../resources/icons/info_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</normaloff>../../resources/icons/info_16dp_5F6368_FILL0_wght400_GRAD0_opsz20.png</iconset>
-   </property>
    <property name="text">
     <string>Sobre o programa</string>
    </property>
   </action>
   <action name="menuEfetuarTeste">
    <property name="text">
-    <string>Efetuar Testes DB</string>
+    <string>Teste DB</string>
    </property>
   </action>
  </widget>

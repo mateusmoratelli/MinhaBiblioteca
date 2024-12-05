@@ -55,6 +55,7 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
             self.ui.itemSelected = True
         else:
             self.textoItem = ""
+        self.ui.lbStatus.setText(f"Item selecionado: {self.textoItem}")
 
 
     def acaoExcluirTema(self):

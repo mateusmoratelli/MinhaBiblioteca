@@ -20,6 +20,7 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
     def iniciarTela(self):
         self.ui = uiUser.Ui_Form()
         self.ui.setupUi(self)
+        self.ui.lbStatus.setText("Selecione um item ou cadastre um novo.")
     
 
 
@@ -54,6 +55,7 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
             self.itemSelected = True
         else:
             self.textoItem = ""
+        self.ui.lbStatus.setText(f"Usuário selecionado: {self.textoItem}")
 
 
     def acaoExcluirUsuario(self):
@@ -73,6 +75,7 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
                 deleted = _crudUser.delete_user(self.dbsql, id)
                 print(f"\nItem {deleted} deletado com sucesso.\n")
                 self.carregaListaUsuarios()
+                self.ui.lbStatus.setText(f"Usuário {self.textoItem} deletado com sucesso.")
 
 
 
@@ -85,7 +88,8 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
                 listaSalva = _crudUser.create_user(self.dbsql, nomeNovoUsuario)
             else:
                 listaSalva = _crudUser.update_user(self.dbsql, dbUsuarios.id,  nomeNovoUsuario )
-            print(f"|\nO Usuário foi salvo com sucesso no banco de dados:  {listaSalva}\n")
+            print(f"|\n")
+            self.ui.lbStatus.setText(f"O Usuário foi salvo com sucesso no banco de dados:  {listaSalva.id}")
             self.carregaListaUsuarios()
         else:
             QtWidgets.QMessageBox.warning(self, "Aviso", "Não permitido campo em branco. ")
