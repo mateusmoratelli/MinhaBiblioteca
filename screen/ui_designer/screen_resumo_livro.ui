@@ -2,22 +2,13 @@
 <ui version="4.0">
  <class>Form</class>
  <widget class="QWidget" name="Form">
-  <property name="windowModality">
-   <enum>Qt::WindowModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>1023</width>
+    <height>681</height>
    </rect>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>640</width>
-    <height>480</height>
-   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -25,9 +16,9 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>601</width>
+     <x>10</x>
+     <y>0</y>
+     <width>1011</width>
      <height>41</height>
     </rect>
    </property>
@@ -39,110 +30,343 @@
     </font>
    </property>
    <property name="text">
-    <string>CADASTRO DE USUÁRIOS</string>
+    <string>RESUMO DO LIVRO</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QListWidget" name="lstUser">
+  <widget class="QTabWidget" name="Titiulo">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>130</y>
-     <width>251</width>
-     <height>241</height>
+     <width>1001</width>
+     <height>551</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Cadastrar Resumo</string>
+    </attribute>
+    <widget class="QPushButton" name="btExcluir">
+     <property name="geometry">
+      <rect>
+       <x>730</x>
+       <y>460</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="text">
+      <string>Excluir</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</normaloff>../../resources/icons/delete_forever_16dp_BB271A.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btSalvar">
+     <property name="geometry">
+      <rect>
+       <x>860</x>
+       <y>460</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="autoFillBackground">
+      <bool>true</bool>
+     </property>
+     <property name="text">
+      <string>Salvar</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../../resources/icons/save_16dp_48752C.png</normaloff>../../resources/icons/save_16dp_48752C.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>24</width>
+       <height>24</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>10</y>
+       <width>241</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Título</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>241</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Resumos Cadastrados</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>70</y>
+       <width>241</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Resumo</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="lstResumos">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>371</width>
+       <height>481</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>New Item</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLineEdit" name="txtTituloResumo">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>30</y>
+       <width>581</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="txtResumo">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>90</y>
+       <width>581</width>
+       <height>361</height>
+      </rect>
+     </property>
+     <property name="markdown">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>Ler Resumo Completo</string>
+    </attribute>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>971</width>
+       <height>491</height>
+      </rect>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Resumo do Livro&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;h1 style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:xx-large;&quot;&gt;Resumo de &amp;quot;O Alquimista&amp;quot; &lt;/span&gt;&lt;/h1&gt;
+&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large;&quot;&gt;Autor &lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Paulo Coelho &lt;/p&gt;
+&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large;&quot;&gt;Resumo &lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Santiago é um jovem pastor da Andaluzia que tem um sonho recorrente sobre um tesouro escondido nas Pirâmides do Egito. Após encontrar uma velha misteriosa e um rei que o incentiva a seguir seu destino, Santiago vende tudo o que possui e embarca em uma jornada que mudará sua vida para sempre. No caminho, ele encontra desafios, conhece pessoas inspiradoras e aprende valiosas lições sobre a vida, o amor e o propósito. &lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A jornada de Santiago simboliza a busca do ser humano por realização pessoal e espiritual. Cada etapa de sua viagem revela algo sobre si mesmo e sobre a conexão entre os seres humanos e o universo. &lt;/p&gt;
+&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large;&quot;&gt;Principais lições &lt;/span&gt;&lt;/h2&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Escute seu coração: As respostas para os maiores mistérios da vida estão dentro de você. &lt;/li&gt;
+&lt;li style=&quot;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;O poder dos sonhos: Nunca ignore a força de um sonho verdadeiro. &lt;/li&gt;
+&lt;li style=&quot;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A jornada é importante: As lições aprendidas ao longo do caminho são tão valiosas quanto o destino final. &lt;/li&gt;
+&lt;li style=&quot;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Conexão com o universo: O universo conspira para ajudar aqueles que buscam cumprir seu propósito. &lt;/li&gt;
+&lt;li style=&quot;&quot; style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;O amor verdadeiro: Não impede, mas encoraja a busca pelos seus sonhos. &lt;/li&gt;&lt;/ul&gt;
+&lt;h2 style=&quot; margin-top:16px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:x-large;&quot;&gt;Mais detalhes &lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Santiago encontra várias pessoas durante sua viagem, cada uma representando um obstáculo ou aprendizado importante. Entre elas, o alquimista que lhe ensina a linguagem do mundo e o poder de seguir seus instintos. Apesar das dificuldades, como ser roubado ou duvidar de sua jornada, ele persiste e finalmente encontra o tesouro em um lugar inesperado. A verdadeira descoberta, no entanto, é sua transformação pe &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="btAdicionarUsuario">
+  <widget class="QLabel" name="lbTituloLivro">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>180</y>
-     <width>121</width>
-     <height>51</height>
+     <x>10</x>
+     <y>50</y>
+     <width>1011</width>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
-    <string>Adicionar usuário</string>
+    <string>LIVRO XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="txtNovoUsuario">
+  <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>140</y>
-     <width>191</width>
+     <x>630</x>
+     <y>117</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Usuário:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="cbUsuario">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>110</y>
+     <width>201</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QPushButton" name="btBuscarResumos">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>120</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Novo usuário</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
+     <x>910</x>
      <y>110</y>
-     <width>171</width>
-     <height>16</height>
+     <width>91</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>12</pointsize>
+     <pointsize>10</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>Usuários cadastrados</string>
+    <string>Buscar</string>
    </property>
-  </widget>
-  <widget class="QPushButton" name="btExcluirUsuario">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>380</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../resources/icons/search_24dp_5F6368.png</normaloff>../../resources/icons/search_24dp_5F6368.png</iconset>
    </property>
-   <property name="text">
-    <string>Excluir</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btEditarUsuario">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>380</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Editar</string>
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
    </property>
   </widget>
  </widget>

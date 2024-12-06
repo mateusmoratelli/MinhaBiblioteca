@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1303</width>
-    <height>796</height>
+    <height>726</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -322,9 +322,9 @@
    <widget class="QPushButton" name="btBuscarLivros">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>336</x>
       <y>40</y>
-      <width>151</width>
+      <width>150</width>
       <height>31</height>
      </rect>
     </property>
@@ -537,8 +537,8 @@
    <widget class="QLabel" name="lbTituloLivro">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>30</y>
+      <x>490</x>
+      <y>10</y>
       <width>801</width>
       <height>20</height>
      </rect>
@@ -583,7 +583,7 @@
       <x>789</x>
       <y>323</y>
       <width>501</width>
-      <height>351</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="font">

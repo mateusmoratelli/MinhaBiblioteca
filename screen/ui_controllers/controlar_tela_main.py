@@ -8,6 +8,7 @@ import screen.ui_controllers.controlar_tela_cadastro_temas as ctrlTemas
 import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
 import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
 import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
+import screen.ui_controllers.controlar_tela_resumo_livros as ctrlResumo
 
 # importar banco de dados
 import database.crud.livros as _crudLivros
@@ -173,16 +174,18 @@ class TelaMain():
     
 
     def acaoLerResumo(self):
-        print("Ler resumo do livro")
+        self.ui.statusbar.showMessage("Carregando resumos", 3000)
+        idLivro = self.ui.lbID.text()
+        tituloLivro = self.ui.lbTituloLivro.text()
+        self.telaResumo = ctrlResumo.Resumo(idLivro, tituloLivro)
+        self.telaResumo.show()
 
 
 
     def acaoAbrirPdf(self):
-       print(self.pdf)
-       fm.FileManager().abrir_pdf(self.pdf)
+        self.ui.statusbar.showMessage(f"Abrindo PDF: {self.pdf}", 8000)
+        fm.FileManager().abrir_pdf(self.pdf)
     
 
 
- 
-    
-
+   

@@ -9,12 +9,13 @@ Detalhes:
     - Inclui lógica para associar resumos a usuários e livros.
 """
 
+from sqlalchemy import and_
 from sqlalchemy.orm import Session
 from models.resumo import Resumo
 
 # CRUD para Resumo
-def create_resumo(db: Session, idusuario: int, idlivro: int, resumo: str, paginasLidas: int):
-   resumo_obj = Resumo(idusuario=idusuario, idlivro=idlivro, resumo=resumo, paginasLidas=paginasLidas)
+def create_resumo(db: Session, usuario: str, idlivro: int, tituloResumo: str, resumo: str):
+   resumo_obj = Resumo(usuario=usuario, idlivro=idlivro, tituloResumo=tituloResumo, resumo=resumo)
    db.add(resumo_obj)
    db.commit()
    db.refresh(resumo_obj)
@@ -22,8 +23,14 @@ def create_resumo(db: Session, idusuario: int, idlivro: int, resumo: str, pagina
 
 
 
-def get_resumo(db: Session, resumo_id: int):
-   return db.query(Resumo).filter(Resumo.id == resumo_id).first()
+def get_resumo_livro(db: Session, idlivro: int, usuario: str):
+    lstResumo =  db.query(Resumo).filter(
+        and_(
+            Resumo.idlivro == idlivro,
+            Resumo.usuario == usuario
+        )
+    ).all()
+    return lstResumo
 
 
 
@@ -32,20 +39,21 @@ def get_all_resumos(db: Session, skip: int = 0, limit: int = 10):
 
 
 
-def update_resumo(db: Session, resumo_id: int, idusuario: int = None, idlivro: int = None, resumo: str = None, paginasLidas: int = None):
-   resumo_obj = db.query(Resumo).filter(Resumo.id == resumo_id).first()
-   if resumo_obj:
-       if idusuario:
-           resumo_obj.idusuario = idusuario
-       if idlivro:
-           resumo_obj.idlivro = idlivro
-       if resumo:
-           resumo_obj.resumo = resumo
-       if paginasLidas is not None:
-           resumo_obj.paginasLidas = paginasLidas
-       db.commit()
-       db.refresh(resumo_obj)
-   return resumo_obj
+
+def update_resumo(db: Session, resumo_id: int, usuario: str = None, idlivro: int = None, tituloResumo: str = None, resumo: str = None):
+    resumo_obj = db.query(Resumo).filter(Resumo.id == resumo_id).first()
+    if resumo_obj:
+        if usuario:
+            resumo_obj.usuario = usuario
+        if idlivro:
+            resumo_obj.idlivro = idlivro
+        if tituloResumo:
+            resumo_obj.tituloResumo = tituloResumo
+        if resumo:
+            resumo_obj.resumo = resumo
+        db.commit()
+        db.refresh(resumo_obj)
+    return resumo_obj
 
 
 
