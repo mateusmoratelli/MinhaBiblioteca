@@ -34,9 +34,14 @@ def get_resumo_livro(db: Session, idlivro: int, usuario: str):
 
 
 
+def get_resumo_livro_by_id(db: Session, id : int):
+    lstResumo =  db.query(Resumo).filter(Resumo.id == id).all()
+    return lstResumo
+
+
+
 def get_all_resumos(db: Session, skip: int = 0, limit: int = 10):
    return db.query(Resumo).offset(skip).limit(limit).all()
-
 
 
 

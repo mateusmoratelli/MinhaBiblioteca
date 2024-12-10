@@ -6,8 +6,8 @@ import utils.files_manager as fileMana
 import logging
 
 # Configuração do log para SQLAlchemy
-logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+# logging.basicConfig()
+# logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 # Caminho para o banco de dados SQLite
 DATABASE_URL = f"sqlite:///{PASTA_BASE}{SQL_FILE}"

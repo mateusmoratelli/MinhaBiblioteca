@@ -177,6 +177,7 @@ class TelaMain():
         self.ui.statusbar.showMessage("Carregando resumos", 3000)
         idLivro = self.ui.lbID.text()
         tituloLivro = self.ui.lbTituloLivro.text()
+        autor = self.ui.lbAutor.text()
         self.telaResumo = ctrlResumo.Resumo(idLivro, tituloLivro)
         self.telaResumo.show()
 

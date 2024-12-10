@@ -100,8 +100,16 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
 
 
     def acaoExcluir(self):
-        print("Botão Excluir clicado")
-
+        resposta = QtWidgets.QMessageBox.question(
+                self,
+                "Confirmar Exclusão",
+                f"Tem certeza de que deseja excluir '{self.idLivro}'?",
+                QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No
+            )
+        # Verifica a resposta do usuário
+        if resposta == QtWidgets.QMessageBox.Yes:
+            deleted = _crudLivros.delete_livro(self.dbsql, self.idLivro)
+            self.close()
 
 
     def acaoAdicionarCapa(self):

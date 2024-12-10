@@ -19,10 +19,12 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
         self.valoresIniciais()
     
 
+
     def iniciarTela(self):
         self.ui = uiTemas.Ui_Form()
         self.ui.setupUi(self)
     
+
 
     def defineAcoesBotoes(self):
         self.ui.btExcluirTema.clicked.connect(self.acaoExcluirTema)
@@ -30,8 +32,10 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
         self.ui.lstTemas.clicked.connect(self.acaoPegarItemSelcionado)
 
 
+
     def valoresIniciais(self):
         self.ui.lbStatus.setText("")
+
 
 
     def carregarListaTemas(self):
@@ -46,6 +50,7 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
             self.ui.lstTemas.addItem(i.tema)
 
 
+
     def acaoPegarItemSelcionado(self):
         item = self.ui.lstTemas.currentItem()
         if item is not None:
@@ -56,6 +61,7 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
         else:
             self.textoItem = ""
         self.ui.lbStatus.setText(f"Item selecionado: {self.textoItem}")
+
 
 
     def acaoExcluirTema(self):
@@ -77,6 +83,7 @@ class CadastrarTemas(uiTemas.QtWidgets.QWidget):
                 print(f"\nItem {deleted} deletado com sucesso.\n")
                 self.carregarListaTemas()
                 self.ui.lbStatus.setText(f"O Tema '{deleted.tema}' foi excluído.")
+
 
 
     def acaoSalvarTema(self):
