@@ -25,8 +25,3 @@ class SobreSistema(uiSobre.QtWidgets.QWidget):
         self.ui.lbVersao.setText(VERSION)
         self.ui.lbPastaBase.setText(PASTA_BASE)
         self.ui.lbDataBase.setText(SQL_FILE)
-        
-    
- 
-
-        

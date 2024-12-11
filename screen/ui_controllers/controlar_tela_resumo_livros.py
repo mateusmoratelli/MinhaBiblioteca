@@ -128,11 +128,3 @@ class Resumo(scrResumo.QtWidgets.QWidget):
         """
         print(html)
         self.ui.textBrowser.setHtml(html)
-
- 
-    
-
-
- 
-
-        
