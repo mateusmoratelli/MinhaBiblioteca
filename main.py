@@ -1,9 +1,8 @@
-# import test.user_crud_test as _myCrud
-import screen.ui_controllers.controlar_tela_main as telaMain
+""""""
+import screen.controllers.controlar_tela_main as tela_main
 from globais import * 
-from utils.files_manager import FileManager as fileManeger
-import test.debug_tema as dtema
-# import test.user_crud_test as testarCrud
+from utils.files_manager import FileManager as fm
+ 
  
 if __name__ == "__main__":
     print(f"""
@@ -18,7 +17,7 @@ if __name__ == "__main__":
     """)
 
     # Verificar se a pasta existe caso não existe criar. 
-    fileManeger(PASTA_BASE).create_folder(PASTA_BASE)
+    fm(PASTA_BASE).create_folder(PASTA_BASE)
     # testarCrud.run_crud_operations()
-    telaMain.TelaMain()
+    tela_main.TelaMain()
 

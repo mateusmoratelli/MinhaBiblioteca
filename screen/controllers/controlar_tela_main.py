@@ -3,12 +3,12 @@ from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
 # importar telas 
-import screen.ui_generated.screen_main as uiMain
-import screen.ui_controllers.controlar_tela_cadastro_temas as ctrlTemas
-import screen.ui_controllers.controlar_tela_cadastro_livros as ctrlLivros
-import screen.ui_controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
-import screen.ui_controllers.controlar_tela_sobre_sistema as ctrlSobre
-import screen.ui_controllers.controlar_tela_resumo_livros as ctrlResumo
+import screen.generated.screen_main as uiMain
+import screen.controllers.controlar_tela_cadastro_temas as ctrlTemas
+import screen.controllers.controlar_tela_cadastro_livros as ctrlLivros
+import screen.controllers.controlar_tela_cadastro_usuarios as ctrlUsuarios
+import screen.controllers.controlar_tela_sobre_sistema as ctrlSobre
+import screen.controllers.controlar_tela_resumo_livros as ctrlResumo
 
 # importar banco de dados
 import database.crud.livros as _crudLivros

@@ -2,7 +2,7 @@ from argparse import Action
 from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
-import screen.ui_generated.screen_resumo_livro as scrResumo
+import screen.generated.screen_resumo_livro as scrResumo
 from globais import *
 
 import database.crud.resumo as crudResumo

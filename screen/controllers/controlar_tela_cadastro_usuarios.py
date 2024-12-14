@@ -2,7 +2,7 @@ from argparse import Action
 from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
-import screen.ui_generated.screen_cadastro_usuarios as uiUser
+import screen.generated.screen_cadastro_usuarios as uiUser
 import database.db_setup as dbSetup
 import database.crud.usuario as _crudUser
 

@@ -8,28 +8,34 @@ Detalhes:
     - Funções para criar, ler, atualizar e deletar temas de livros.
     - Inclui lógica para listar temas disponíveis.
 """
-
+from sqlalchemy.orm import sessionmaker
+from database.db_setup import engine
 from sqlalchemy.orm import Session
 from models.tema import Tema
 
+# Configuração da sessão
+Session = sessionmaker(bind=engine)
+session = Session()
+
+
 # CRUD para tema
-def create_tema(db: Session, tema: str):
+def create_tema(tema: str):
    tema = Tema(tema=tema)
-   db.add(tema)
-   db.commit()
-   db.refresh(tema)
+   session.add(tema)
+   session.commit()
+   session.refresh(tema)
    return tema
 
 
-def get_tema_by_id(db: Session, tema_id: int):
-   return db.query(Tema).filter(Tema.id == tema_id).first()
+def get_tema_by_id(tema_id: int):
+   return session.query(Tema).filter(Tema.id == tema_id).first()
 
 
-def get_tema_by_name(db: Session, tema: str):
-   return db.query(Tema).filter(Tema.tema == tema).all()
+def get_tema_by_name(tema: str):
+   return session.query(Tema).filter(Tema.tema == tema).all()
 
 
-def search_tema_by_name(db: Session, search_term: str):
+def search_tema_by_name(search_term: str):
     """
     Busca gêneros que contenham o termo de pesquisa (case insensitive).
     
@@ -38,28 +44,28 @@ def search_tema_by_name(db: Session, search_term: str):
     :return: Lista de objetos `Tema` correspondentes. 
     """
     search_pattern = f"%{search_term}%"
-    return db.query(Tema).filter(Tema.tema.ilike(search_pattern)).all()
+    return session.query(Tema).filter(Tema.tema.ilike(search_pattern)).all()
     
 
 
-def get_all_tema(db: Session, skip: int = 0, limit: int = 10):
-   dbList = db.query(Tema).order_by(Tema.tema).offset(skip).limit(limit).all()
-   return dbList
+def get_all_tema(skip: int = 0, limit: int = 999999):
+   db_list = session.query(Tema).order_by(Tema.tema).offset(skip).limit(limit).all()
+   return db_list
 
 
-def update_tema(db: Session, tema_id: int, tema: str = None):
-   tema_obj = db.query(Tema).filter(Tema.id == tema_id).first()
+def update_tema(tema_id: int, tema: str = None):
+   tema_obj = session.query(Tema).filter(Tema.id == tema_id).first()
    if tema_obj:
        if tema:
            tema_obj.tema = tema
-       db.commit()
-       db.refresh(tema_obj)
+       session.commit()
+       session.refresh(tema_obj)
    return tema_obj
 
 
-def delete_tema(db: Session, tema_id: int):
-   tema = db.query(Tema).filter(Tema.id == tema_id).first()
+def delete_tema(tema_id: int):
+   tema = session.query(Tema).filter(Tema.id == tema_id).first()
    if tema:
-       db.delete(tema)
-       db.commit()
+       session.delete(tema)
+       session.commit()
    return tema

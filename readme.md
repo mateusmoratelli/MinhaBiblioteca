@@ -1,12 +1,30 @@
 
 # Comandos para gerar as telas.  
-pyuic5 -x screen/ui_designer/screen_cadastro_livros.ui -o screen/ui_generated/screen_cadastro_livros.py
-pyuic5 -x screen/ui_designer/screen_cadastro_usuarios.ui -o screen/ui_generated/screen_cadastro_usuarios.py
-pyuic5 -x screen/ui_designer/screen_resumo_livro.ui -o screen/ui_generated/screen_resumo_livro.py
-pyuic5 -x screen/ui_designer/screen_main.ui -o screen/ui_generated/screen_main.py
-pyuic5 -x screen/ui_designer/sreen_sobre_programa.ui -o screen/ui_generated/sreen_sobre_programa.py
-pyuic5 -x screen/ui_designer/screen_cadastro_temas.ui -o screen/ui_generated/screen_cadastro_temas.py
+pyuic5 -x screen/design/screen_cadastro_livros.ui -o screen/generated/screen_cadastro_livros.py
+pyuic5 -x screen/design/screen_cadastro_usuarios.ui -o screen/generated/screen_cadastro_usuarios.py
+pyuic5 -x screen/design/screen_resumo_livro.ui -o screen/generated/screen_resumo_livro.py
+pyuic5 -x screen/design/screen_main.ui -o screen/generated/screen_main.py
+pyuic5 -x screen/design/sreen_sobre_programa.ui -o screen/generated/sreen_sobre_programa.py
+pyuic5 -x screen/design/screen_cadastro_temas.ui -o screen/generated/screen_cadastro_temas.py
 
+
+## deletar 
+del D:\python_projetos\MinhaBiblioteca\screen\generated\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\screen\generated\__pycache__
+del D:\python_projetos\MinhaBiblioteca\test\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\test\__pycache__
+del D:\python_projetos\MinhaBiblioteca\screen\controllers\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\screen\controllers\__pycache__
+del D:\python_projetos\MinhaBiblioteca\screen\controllers\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\screen\controllers\__pycache__
+del D:\python_projetos\MinhaBiblioteca\models\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\models\__pycache__
+del D:\python_projetos\MinhaBiblioteca\database\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\database\__pycache__
+del D:\python_projetos\MinhaBiblioteca\database\crud\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\database\crud\__pycache__
+del D:\python_projetos\MinhaBiblioteca\utils\__pycache__\*.*
+rmdir D:\python_projetos\MinhaBiblioteca\utils\__pycache__
 
 # LIVROS 
 ## O poder do hábito: Por que fazemos o que fazemos na vida e nos negócios

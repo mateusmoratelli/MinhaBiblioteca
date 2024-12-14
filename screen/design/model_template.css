@@ -1,0 +1,171 @@
+/*VALIDO*/
+/*Styles for the info_frame element*/
+
+/*GERAL  mm*/
+
+
+
+QFrame{
+    background-color:#ffffff;
+    font: 10pt "Arial";
+}
+
+QWidget{
+    background-color:#ffffff;
+    font: 10pt "Arial";
+}
+QDialog{
+    background-color:#5a5e61;	    
+}
+
+#widgetFundo{
+    background-color:#0075BE; 
+}
+
+#frame_2{
+    background-color:#2a7045;
+}
+
+QGrupoBox{
+    background-color:#f5f103;
+}
+
+/* QLine */
+    QLineEdit {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        border-radius: 3px;
+        border: 2px solid rgb(40, 185, 218);
+        padding-left: 10px;
+        selection-color: rgb(255, 255, 255);
+        selection-background-color: rgb(150, 201, 229);
+    }
+    QLineEdit:hover {
+        border: 2px solid rgb(34, 186, 222);
+    }
+    QLineEdit:focus {
+        border: 2px solid rgb(162, 216, 230);
+    }
+
+    #txt_Key_3{
+        font-weight: bold;
+        color:#0075BE;
+    }
+
+/* QComboBox */
+QComboBox {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 3px;
+    border: 2px solid rgb(40, 185, 218);
+    padding-left: 10px;
+    selection-color: rgb(255, 255, 255);
+    selection-background-color: rgb(150, 201, 229);
+}
+QComboBox:hover {
+    border: 2px solid rgb(34, 186, 222);
+}
+QComboBox:focus {
+    border: 2px solid rgb(162, 216, 230);
+}
+
+
+/* Labels */ 
+#label_Jiraia 
+{
+    color: rgb(255, 255, 255);
+    font-size: 28px;
+}
+
+QLabel{
+    color: rgb(44, 49, 60);
+    background-color: transparent;
+    font-size: 12px;
+}
+
+#label_status, #label_SA
+{
+    color: rgb(255, 255, 255);
+}
+
+#label_version
+{
+    text-align: right;
+}
+
+
+/* Buttons */
+QPushButton, QToolButton, QCommandLinkButton{
+padding: 0 5px 0 5px;
+border-style: solid;
+border-top-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #c1c9cf, stop:1 #d2d8dd);
+border-right-color: qlineargradient(spread:pad, x1:1, y1:0, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+border-bottom-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+border-left-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 #c1c9cf, stop:1 #d2d8dd);
+border-width: 2px;
+border-radius: 8px;
+color: #616161;
+font-weight: bold;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #fbfdfd, stop:0.5 #ffffff, stop:1 #fbfdfd);
+}
+QPushButton::default, QToolButton::default, QCommandLinkButton::default{
+border: 2px solid transparent;
+color: #FFFFFF;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #84afe5, stop:1 #1168e4);
+}
+QPushButton:hover, QToolButton:hover, QCommandLinkButton:hover{
+color: #3d3d3d;
+}
+QPushButton:pressed, QToolButton:pressed, QCommandLinkButton:pressed{
+color: #aeaeae;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #ffffff, stop:0.5 #fbfdfd, stop:1 #ffffff);
+}
+QPushButton:disabled, QToolButton:disabled, QCommandLinkButton:disabled{
+color: #616161;
+background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 #dce7eb, stop:0.5 #e0e8eb, stop:1 #dee7ec);
+}
+
+
+/*Tabelas*/
+QTableWidget { 
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    gridline-color: rgb(44, 49, 58);
+}
+/* QTableWidget::item{
+    border-color: rgb(44, 49, 60);
+    padding-left: 0px;
+    padding-right: 0px;
+    gridline-color: rgb(44, 49, 60);
+} */
+/* QTableWidget::item:selected{
+    background-color: rgb(34, 186, 222);
+} */
+QTableWidget::QLabel{
+    border-color: rgb(44, 49, 60);
+    padding-left: 5px;
+    padding-right: 5px;
+    gridline-color: rgb(44, 49, 60);
+}
+
+
+QHeaderView::section{
+    background-color: rgb(39,129, 190);
+    max-width: 30px;
+    border: 1px solid rgb(44, 49, 58);
+    border-style: none;
+    border-bottom: 1px solid rgb(44, 49, 60);
+    border-right: 1px solid rgb(44, 49, 60);
+}
+QTableWidget::horizontalHeader {   
+    background-color: rgb(39,129, 190);
+}
+/* QHeaderView::section:horizontal
+{
+    border: 1px solid rgb{color_borda};
+    background-color: rgb{color_borda};
+    padding: 3px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+} */

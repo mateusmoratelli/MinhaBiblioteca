@@ -2,7 +2,7 @@ from argparse import Action
 from PyQt5 import QtWidgets, QtGui, QtCore
 import sys
 
-import screen.ui_generated.sreen_sobre_programa as uiSobre
+import screen.generated.sreen_sobre_programa as uiSobre
 from globais import *
 
 
