@@ -3,7 +3,6 @@ import screen.controllers.controlar_tela_main as tela_main
 from globais import * 
 from utils.files_manager import FileManager as fm
  
- 
 if __name__ == "__main__":
     print(f"""
           

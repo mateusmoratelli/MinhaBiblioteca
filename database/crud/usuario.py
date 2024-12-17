@@ -9,50 +9,55 @@ Detalhes:
     - Pode incluir funcionalidades adicionais, como autenticação e associações.
 """
 
-
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
+from database.db_setup import engine
+# from sqlalchemy.orm import Session
 from models.usuario import Usuario
 
+# Configuração da sessão
+Session = sessionmaker(bind=engine)
+session = Session()
+
 # CRUD para Usuario
-def create_user(db: Session, nome):
+def create_user(nome):
    user = Usuario(nome=nome)
-   db.add(user)
-   db.commit()
-   db.refresh(user)
+   session.add(user)
+   session.commit()
+   session.refresh(user)
    return user
 
 
 
-def get_user_by_id(db: Session, user_id: int):
-   return db.query(Usuario).filter(Usuario.id == user_id).first()
+def get_user_by_id(user_id: int):
+   return session.query(Usuario).filter(Usuario.id == user_id).first()
 
 
 
-def get_user_by_name(db: Session, nome: str):
-   listaDB = db.query(Usuario).filter(Usuario.nome == nome).first()
+def get_user_by_name(nome: str):
+   listaDB = session.query(Usuario).filter(Usuario.nome == nome).first()
    return listaDB
 
 
 
-def get_users(db: Session, skip: int = 0, limit: int = 10):
-   return db.query(Usuario).order_by(Usuario.nome).offset(skip).limit(limit).all()
+def get_users(skip: int = 0, limit: int = 10):
+   return session.query(Usuario).order_by(Usuario.nome).offset(skip).limit(limit).all()
 
 
 
-def update_user(db: Session, user_id: int, nome: str = None):
-   user = db.query(Usuario).filter(Usuario.id == user_id).first()
+def update_user(user_id: int, nome: str = None):
+   user = session.query(Usuario).filter(Usuario.id == user_id).first()
    if user:
        if nome:
            user.nome = nome
-       db.commit()
-       db.refresh(user)
+       session.commit()
+       session.refresh(user)
    return user
 
 
 
-def delete_user(db: Session, user_id: int):
-   user = db.query(Usuario).filter(Usuario.id == user_id).first()
+def delete_user(user_id: int):
+   user = session.query(Usuario).filter(Usuario.id == user_id).first()
    if user:
-       db.delete(user)
-       db.commit()
+       session.delete(user)
+       session.commit()
    return user

@@ -1,16 +1,12 @@
-from argparse import Action
-from PyQt5 import QtWidgets, QtGui, QtCore
-import sys
-
+from PyQt5 import QtWidgets
 import screen.generated.screen_cadastro_usuarios as uiUser
-import database.db_setup as dbSetup
+# import database.db_setup as dbSetup
 import database.crud.usuario as _crudUser
 
 
 class CadastrarUsuario(uiUser.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.dbsql = dbSetup.SessionLocal()  
         self.iniciarTela()
         self.defineAcoesBotoes()
         self.carregaListaUsuarios()
@@ -38,7 +34,7 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
         self.itemSelected = False
         
         # busca na base de dados
-        lst = _crudUser.get_users(self.dbsql, 0, 999999)
+        lst = _crudUser.get_users(0, 999999)
         print(lst)
         for i in lst:
             print(i)
@@ -71,8 +67,8 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
             # Verifica a resposta do usuário
             if resposta == QtWidgets.QMessageBox.Yes:
                 # Remove o item selecionado
-                id = _crudUser.get_user_by_name(self.dbsql, self.textoItem).id
-                deleted = _crudUser.delete_user(self.dbsql, id)
+                id_usuario = _crudUser.get_user_by_name(self.textoItem).id
+                deleted = _crudUser.delete_user(id_usuario)
                 print(f"\nItem {deleted} deletado com sucesso.\n")
                 self.carregaListaUsuarios()
                 self.ui.lbStatus.setText(f"Usuário {self.textoItem} deletado com sucesso.")
@@ -80,16 +76,16 @@ class CadastrarUsuario(uiUser.QtWidgets.QWidget):
 
 
     def acaoSalvarUsuario(self):
-        nomeNovoUsuario = str(self.ui.txtUsuario.text())
-        dbUsuarios = _crudUser.get_user_by_name(self.dbsql, self.textoItem)
+        nome_novo_usuario = str(self.ui.txtUsuario.text())
+        db_usuarios = _crudUser.get_user_by_name(self.textoItem)
 
-        if nomeNovoUsuario != "": 
-            if dbUsuarios == None:
-                listaSalva = _crudUser.create_user(self.dbsql, nomeNovoUsuario)
+        if nome_novo_usuario != "": 
+            if db_usuarios == None:
+                lista_salva = _crudUser.create_user(nome_novo_usuario)
             else:
-                listaSalva = _crudUser.update_user(self.dbsql, dbUsuarios.id,  nomeNovoUsuario )
+                lista_salva = _crudUser.update_user(db_usuarios.id,  nome_novo_usuario )
             print(f"|\n")
-            self.ui.lbStatus.setText(f"O Usuário foi salvo com sucesso no banco de dados:  {listaSalva.id}")
+            self.ui.lbStatus.setText(f"O Usuário foi salvo com sucesso no banco de dados:  {lista_salva.id}")
             self.carregaListaUsuarios()
         else:
             QtWidgets.QMessageBox.warning(self, "Aviso", "Não permitido campo em branco. ")

@@ -10,7 +10,7 @@ Detalhes:
 """
 from sqlalchemy.orm import sessionmaker
 from database.db_setup import engine
-from sqlalchemy.orm import Session
+# from sqlalchemy.orm import Session
 from models.tema import Tema
 
 # Configuração da sessão

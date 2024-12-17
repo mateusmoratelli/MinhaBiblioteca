@@ -13,7 +13,7 @@ import database.crud.livros as crud_livro
 class Resumo(scrResumo.QtWidgets.QWidget):
     def __init__(self, idLivro:int, tituloLivro:str):
         super().__init__()
-        self.dbsql = dbSetup.SessionLocal()
+ 
         self.idLivro = idLivro
         self.tituloLivro = tituloLivro
         self.lstIdResumo = []

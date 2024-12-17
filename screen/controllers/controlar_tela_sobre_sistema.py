@@ -10,14 +10,14 @@ from globais import *
 class SobreSistema(uiSobre.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
-        self.iniciarTela()
-        self.preencheInformacoes()
+        self.iniciar_tela()
+        self.preencher_informacoes()
 
-    def iniciarTela(self):
+    def iniciar_tela(self):
         self.ui = uiSobre.Ui_Form()
         self.ui.setupUi(self)
 
-    def preencheInformacoes(self):
+    def preencher_informacoes(self):
         self.ui.lbDataRevisao.setText(RELEASED)
         self.ui.lbDesenvolvedor.setText(BY)
         self.ui.lbSite.setText(WEBSITE)

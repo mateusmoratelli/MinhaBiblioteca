@@ -1,6 +1,6 @@
 import sys
 from argparse import Action
-from PyQt5.QtWidgets import  QFileDialog
+from PyQt5.QtWidgets import QFileDialog
 from PyQt5 import QtWidgets, QtGui, QtCore
 
 from globais import * 
@@ -8,15 +8,13 @@ import screen.generated.screen_cadastro_livros as uiLivros
 import database.crud.livros as _crudLivros
 import database.crud.tema as crud_temas
 import database.db_setup as dbSetup
-import utils.files_manager as fileMana
+import utils.files_manager as fm
 import utils.funcoes_globais as _utis
-from pathlib import Path # para pegar dados do arquivo. 
-
+from pathlib import Path # para pegar dados do arquivo
 
 class CadastrarLivro(uiLivros.QtWidgets.QWidget):  
     def __init__(self, id_livro:int, eh_livro_novo:bool):
         super().__init__()
-        self.dbsql = dbSetup.SessionLocal()
         self.id_livro = id_livro
         self.eh_livro_novo = eh_livro_novo
         self.capa = "resources\img\capa_programa_principal.png"
@@ -77,11 +75,11 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
         livro_id = self.id_livro
 
         if self.eh_livro_novo:
-            gravado = _crudLivros.create_livro(self.dbsql, livro, autor, editora, 
+            gravado = _crudLivros.create_livro(livro, autor, editora, 
                                             tema, isbn, paginas, ano, self.capa,
                                             self.pdf, classificacao, sinopse)
-        else: 
-            gravado = _crudLivros.update_livro(self.dbsql, livro_id, livro, autor, editora, 
+        else:
+            gravado = _crudLivros.update_livro(livro_id, livro, autor, editora, 
                                             tema, isbn, paginas, ano, self.capa,
                                             self.pdf, classificacao, sinopse)         
 
@@ -106,7 +104,7 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
             )
         # Verifica a resposta do usuário
         if resposta == QtWidgets.QMessageBox.Yes:
-            deleted = _crudLivros.delete_livro(self.dbsql, self.id_livro)
+            deleted = _crudLivros.delete_livro(self.id_livro)
             print(deleted)
             self.close()
 
@@ -122,7 +120,7 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
             nome_arquivo_com_extensao = Path(file_name).name
             dest_file = f"{self.uuid}_{nome_arquivo_com_extensao}"
             # copiar para pasta
-            fileMana.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
+            fm.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
 
             self.capa = f"{PASTA_BASE}{dest_file}"
             pixmap = QtGui.QPixmap(self.capa)     # caminho da imagem
@@ -145,6 +143,6 @@ class CadastrarLivro(uiLivros.QtWidgets.QWidget):
             nome_arquivo_com_extensao = Path(file_name).name
             dest_file = f"{self.uuid}_{nome_arquivo_com_extensao}"
             # copiar para pasta
-            fileMana.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
+            fm.FileManager(PASTA_BASE).copy_file(file_name, PASTA_BASE,  dest_file)
             self.pdf = f"{PASTA_BASE}{dest_file}"
             self.ui.lbStatus.setText(f"PDF enviado com sucesso: {self.pdf}")
